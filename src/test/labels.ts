@@ -1,0 +1,34 @@
+import type { UiLabels } from "#/shared/labels";
+
+export const testLabels: UiLabels = {
+	cancel: "Cancel",
+	saveChanges: "Save changes",
+	clear: "Clear",
+	search: "Search",
+	noResults: "No results",
+	nSelected: (count) => `${count} selected`,
+	textOperators: {
+		eq: "Equals",
+		neq: "Does not equal",
+		contains: "Contains",
+		not_contains: "Does not contain",
+		starts_with: "Starts with",
+		ends_with: "Ends with",
+	},
+	moreActions: "More actions",
+	loadFailed: "Couldn't load this",
+	retry: "Try again",
+	noPermission:
+		"You don't have permission to do this. Ask an admin of this operator if you need access.",
+	pickADate: "Pick a date",
+	pickATime: "Pick a time",
+	hour: "Hour",
+	minute: "Minute",
+	showPassword: "Show password",
+	hidePassword: "Hide password",
+	translated: "Translated",
+	notTranslated: "Not translated",
+	translation: "Translation",
+	translationFallbackHelp:
+		"Leave a field empty to use the default-language text.",
+};
