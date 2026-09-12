@@ -7,7 +7,7 @@ import {
 	SelectItem,
 	SelectTrigger,
 	SelectValue,
-} from "#/components/ui/select";
+} from "../../components/ui/select";
 import { type TextOperator, useUiLabels } from "../labels";
 import { AppFilterInput } from "./AppFilterInput";
 

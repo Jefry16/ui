@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { PlusIcon } from "lucide-react";
-import { Button } from "#/components/ui/button";
+import { Button } from "../../components/ui/button";
 import { AppPageHeader } from "./AppPageHeader";
 
 const meta = {

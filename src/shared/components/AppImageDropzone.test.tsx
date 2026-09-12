@@ -1,7 +1,7 @@
 import { fireEvent, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
-import { renderWithProviders } from "#/test/test-utils";
+import { renderWithProviders } from "../../test/test-utils";
 import { AppImageDropzone } from "./AppImageDropzone";
 
 const file = (name: string, type: string, bytes = 10) => {

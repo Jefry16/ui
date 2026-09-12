@@ -1,6 +1,6 @@
 import type { AnyFieldApi } from "@tanstack/react-form";
-import { Checkbox } from "#/components/ui/checkbox";
-import { Field, FieldDescription, FieldLabel } from "#/components/ui/field";
+import { Checkbox } from "../../components/ui/checkbox";
+import { Field, FieldDescription, FieldLabel } from "../../components/ui/field";
 
 interface AppCheckboxFieldProps {
 	field: AnyFieldApi;

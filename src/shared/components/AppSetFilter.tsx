@@ -1,9 +1,9 @@
 import type { HeaderContext } from "@tanstack/react-table";
 import { useMemo, useState } from "react";
-import { Button } from "#/components/ui/button";
-import { Checkbox } from "#/components/ui/checkbox";
-import { Input } from "#/components/ui/input";
-import { Label } from "#/components/ui/label";
+import { Button } from "../../components/ui/button";
+import { Checkbox } from "../../components/ui/checkbox";
+import { Input } from "../../components/ui/input";
+import { Label } from "../../components/ui/label";
 import { useUiLabels } from "../labels";
 
 export interface SetFilterItem {

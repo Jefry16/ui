@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useForm } from "@tanstack/react-form";
-import { SelectItem } from "#/components/ui/select";
+import { SelectItem } from "../../components/ui/select";
 import { AppSelectField } from "./AppSelectField";
 
 function SelectDemo(props: { label: string; placeholder?: string }) {

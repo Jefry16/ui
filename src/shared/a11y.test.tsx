@@ -1,16 +1,13 @@
 import { Languages, Pencil, Trash2 } from "lucide-react";
 import { describe, it, vi } from "vitest";
-import { Card, CardContent } from "#/components/ui/card";
-import { Dialog, DialogContent, DialogTitle } from "#/components/ui/dialog";
-import { AppDetailField } from "#/shared/components/AppDetailField";
-import { AppDialogFooter } from "#/shared/components/AppDialogFooter";
-import {
-	type AppAction,
-	AppPageActions,
-} from "#/shared/components/AppPageActions";
-import { AppSourceBlock } from "#/shared/components/AppSourceBlock";
-import { expectNoA11yViolations } from "#/test/a11y";
-import { renderWithProviders } from "#/test/test-utils";
+import { Card, CardContent } from "../components/ui/card";
+import { Dialog, DialogContent, DialogTitle } from "../components/ui/dialog";
+import { expectNoA11yViolations } from "../test/a11y";
+import { renderWithProviders } from "../test/test-utils";
+import { AppDetailField } from "./components/AppDetailField";
+import { AppDialogFooter } from "./components/AppDialogFooter";
+import { type AppAction, AppPageActions } from "./components/AppPageActions";
+import { AppSourceBlock } from "./components/AppSourceBlock";
 
 describe("accessibility", () => {
 	it("a facts list is a real description list", async () => {

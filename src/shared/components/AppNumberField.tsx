@@ -4,7 +4,7 @@ import {
 	FieldDescription,
 	FieldError,
 	FieldLabel,
-} from "#/components/ui/field";
+} from "../../components/ui/field";
 import { AppNumericInput } from "./AppNumericInput";
 import { RequiredMark } from "./RequiredMark";
 

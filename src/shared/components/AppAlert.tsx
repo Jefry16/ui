@@ -4,8 +4,8 @@ import {
 	type LucideIcon,
 	TriangleAlert,
 } from "lucide-react";
-import { Alert, AlertDescription, AlertTitle } from "#/components/ui/alert";
-import { cn } from "#/lib/utils";
+import { Alert, AlertDescription, AlertTitle } from "../../components/ui/alert";
+import { cn } from "../../lib/utils";
 
 type AppAlertVariant = "destructive" | "warning" | "info";
 

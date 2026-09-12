@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@fontsource-variable/geist':
+        specifier: ^5.2.8
+        version: 5.3.0
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -26,19 +29,22 @@ importers:
       react-day-picker:
         specifier: ^10.0.1
         version: 10.0.1(@types/react@19.3.0)(react@19.3.0)
+      shadcn:
+        specifier: ^4.1.2
+        version: 4.21.0(typescript@5.9.3)
       sonner:
         specifier: ^2.0.7
         version: 2.0.8(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       tailwind-merge:
         specifier: ^3.5.0
         version: 3.6.0
+      tw-animate-css:
+        specifier: ^1.4.0
+        version: 1.4.0
     devDependencies:
       '@biomejs/biome':
         specifier: 2.4.5
         version: 2.4.5
-      '@fontsource-variable/geist':
-        specifier: ^5.2.8
-        version: 5.3.0
       '@storybook/addon-a11y':
         specifier: ^10.5.3
         version: 10.6.0(storybook@10.6.0(@types/react@19.3.0)(react@19.3.0))
@@ -96,18 +102,12 @@ importers:
       react-dom:
         specifier: ^19.2.0
         version: 19.3.0(react@19.3.0)
-      shadcn:
-        specifier: ^4.1.2
-        version: 4.21.0(typescript@5.9.3)
       storybook:
         specifier: ^10.5.3
         version: 10.6.0(@types/react@19.3.0)(react@19.3.0)
       tailwindcss:
         specifier: ^4.1.18
         version: 4.3.3
-      tw-animate-css:
-        specifier: ^1.4.0
-        version: 1.4.0
       typescript:
         specifier: ^5.7.2
         version: 5.9.3

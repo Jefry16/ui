@@ -4,8 +4,8 @@ import {
 	FieldDescription,
 	FieldError,
 	FieldLabel,
-} from "#/components/ui/field";
-import { Textarea } from "#/components/ui/textarea";
+} from "../../components/ui/field";
+import { Textarea } from "../../components/ui/textarea";
 import { RequiredMark } from "./RequiredMark";
 
 interface AppTextareaFieldProps {

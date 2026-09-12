@@ -1,18 +1,18 @@
 import type { AnyFieldApi } from "@tanstack/react-form";
 import { Clock } from "lucide-react";
 import { useState } from "react";
-import { Button } from "#/components/ui/button";
+import { Button } from "../../components/ui/button";
 import {
 	Field,
 	FieldDescription,
 	FieldError,
 	FieldLabel,
-} from "#/components/ui/field";
+} from "../../components/ui/field";
 import {
 	Popover,
 	PopoverContent,
 	PopoverTrigger,
-} from "#/components/ui/popover";
+} from "../../components/ui/popover";
 import {
 	Select,
 	SelectContent,
@@ -20,8 +20,8 @@ import {
 	SelectItem,
 	SelectTrigger,
 	SelectValue,
-} from "#/components/ui/select";
-import { cn } from "#/lib/utils";
+} from "../../components/ui/select";
+import { cn } from "../../lib/utils";
 import { useUiLabels } from "../labels";
 import { RequiredMark } from "./RequiredMark";
 

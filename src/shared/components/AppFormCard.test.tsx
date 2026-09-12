@@ -2,9 +2,9 @@ import { useForm } from "@tanstack/react-form";
 import { screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
-import { FieldGroup } from "#/components/ui/field";
-import { AppField } from "#/shared/components/AppField";
-import { renderWithProviders } from "#/test/test-utils";
+import { FieldGroup } from "../../components/ui/field";
+import { renderWithProviders } from "../../test/test-utils";
+import { AppField } from "./AppField";
 import { AppFormActions } from "./AppFormActions";
 import { AppFormCard } from "./AppFormCard";
 

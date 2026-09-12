@@ -1,5 +1,5 @@
 import { type LucideIcon, RotateCw, TriangleAlert } from "lucide-react";
-import { Button } from "#/components/ui/button";
+import { Button } from "../../components/ui/button";
 import { useUiLabels } from "../labels";
 import { AppEmptyState } from "./AppEmptyState";
 

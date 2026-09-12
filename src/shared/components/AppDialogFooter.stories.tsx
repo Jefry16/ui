@@ -4,7 +4,7 @@ import {
 	DialogContent,
 	DialogHeader,
 	DialogTitle,
-} from "#/components/ui/dialog";
+} from "../../components/ui/dialog";
 import { AppDialogFooter } from "./AppDialogFooter";
 
 const meta = {

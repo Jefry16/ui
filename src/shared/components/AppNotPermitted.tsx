@@ -1,6 +1,6 @@
 import { ShieldOff } from "lucide-react";
 import type { ReactNode } from "react";
-import { Card, CardContent } from "#/components/ui/card";
+import { Card, CardContent } from "../../components/ui/card";
 import { useUiLabels } from "../labels";
 
 export const AppNotPermitted = ({ action }: { action?: ReactNode }) => {

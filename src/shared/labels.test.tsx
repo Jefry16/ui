@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { testLabels } from "#/test/labels";
+import { testLabels } from "../test/labels";
 import { AppError } from "./components/AppError";
 import { UiLabelsProvider } from "./labels";
 

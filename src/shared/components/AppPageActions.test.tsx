@@ -1,7 +1,7 @@
 import { screen } from "@testing-library/react";
 import { Languages, Pencil, Trash2 } from "lucide-react";
 import { describe, expect, it, vi } from "vitest";
-import { renderWithProviders } from "#/test/test-utils";
+import { renderWithProviders } from "../../test/test-utils";
 import { type AppAction, AppPageActions } from "./AppPageActions";
 
 const mixedTiers = (): AppAction[] => [

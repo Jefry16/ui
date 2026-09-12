@@ -1,13 +1,13 @@
 import type { AnyFieldApi } from "@tanstack/react-form";
-import { Checkbox } from "#/components/ui/checkbox";
+import { Checkbox } from "../../components/ui/checkbox";
 import {
 	FieldDescription,
 	FieldError,
 	FieldLegend,
 	FieldSet,
-} from "#/components/ui/field";
-import { Label } from "#/components/ui/label";
-import { cn } from "#/lib/utils";
+} from "../../components/ui/field";
+import { Label } from "../../components/ui/label";
+import { cn } from "../../lib/utils";
 import { RequiredMark } from "./RequiredMark";
 
 interface Option<T> {

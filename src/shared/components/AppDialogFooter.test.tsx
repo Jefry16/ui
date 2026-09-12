@@ -1,7 +1,7 @@
 import { screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
-import { Dialog, DialogContent, DialogTitle } from "#/components/ui/dialog";
-import { renderWithProviders } from "#/test/test-utils";
+import { Dialog, DialogContent, DialogTitle } from "../../components/ui/dialog";
+import { renderWithProviders } from "../../test/test-utils";
 import { AppDialogFooter } from "./AppDialogFooter";
 
 const render = (props: Partial<Parameters<typeof AppDialogFooter>[0]> = {}) =>

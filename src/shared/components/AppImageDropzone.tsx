@@ -1,7 +1,7 @@
 import { ImageUp } from "lucide-react";
 import { type DragEvent, useRef, useState } from "react";
-import { Spinner } from "#/components/ui/spinner";
-import { cn } from "#/lib/utils";
+import { Spinner } from "../../components/ui/spinner";
+import { cn } from "../../lib/utils";
 
 interface AppImageDropzoneProps {
 	onFile: (file: File) => void;

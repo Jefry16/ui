@@ -1,4 +1,4 @@
-import type { UiLabels } from "#/shared/labels";
+import type { UiLabels } from "../shared/labels";
 
 export const testLabels: UiLabels = {
 	cancel: "Cancel",

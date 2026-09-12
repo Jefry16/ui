@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Card, CardContent } from "#/components/ui/card";
+import { Card, CardContent } from "../../components/ui/card";
 import { AppLoadingBlock } from "./AppLoadingBlock";
 
 const meta = {

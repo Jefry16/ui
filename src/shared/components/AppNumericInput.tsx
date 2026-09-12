@@ -1,5 +1,5 @@
 import type { ComponentProps } from "react";
-import { Input } from "#/components/ui/input";
+import { Input } from "../../components/ui/input";
 
 const INTEGER_INPUT = /^\d*$/;
 const DECIMAL_INPUT = /^\d*\.?\d*$/;

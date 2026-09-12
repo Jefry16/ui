@@ -1,15 +1,15 @@
 import type { LucideIcon } from "lucide-react";
 import { MoreHorizontal } from "lucide-react";
 import { useState } from "react";
-import { Button } from "#/components/ui/button";
+import { Button } from "../../components/ui/button";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
 	DropdownMenuTrigger,
-} from "#/components/ui/dropdown-menu";
-import { Spinner } from "#/components/ui/spinner";
-import { cn } from "#/lib/utils";
+} from "../../components/ui/dropdown-menu";
+import { Spinner } from "../../components/ui/spinner";
+import { cn } from "../../lib/utils";
 import { useUiLabels } from "../labels";
 import { AppConfirmDialog } from "./AppConfirmDialog";
 

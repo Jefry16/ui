@@ -1,6 +1,6 @@
-import { Button } from "#/components/ui/button";
-import { DialogClose, DialogFooter } from "#/components/ui/dialog";
-import { Spinner } from "#/components/ui/spinner";
+import { Button } from "../../components/ui/button";
+import { DialogClose, DialogFooter } from "../../components/ui/dialog";
+import { Spinner } from "../../components/ui/spinner";
 import { useUiLabels } from "../labels";
 
 export const AppDialogFooter = ({

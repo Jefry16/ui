@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Users } from "lucide-react";
-import { Button } from "#/components/ui/button";
+import { Button } from "../../components/ui/button";
 import { AppEmptyState } from "./AppEmptyState";
 
 const meta = {

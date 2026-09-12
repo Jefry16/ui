@@ -5,14 +5,14 @@ import {
 	FieldDescription,
 	FieldError,
 	FieldLabel,
-} from "#/components/ui/field";
+} from "../../components/ui/field";
 import {
 	Select,
 	SelectContent,
 	SelectGroup,
 	SelectTrigger,
 	SelectValue,
-} from "#/components/ui/select";
+} from "../../components/ui/select";
 
 interface AppSelectFieldProps {
 	field: AnyFieldApi;
