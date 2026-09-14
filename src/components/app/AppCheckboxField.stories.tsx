@@ -14,7 +14,7 @@ function FieldDemo(props: { label: string; description?: string }) {
 }
 
 const meta = {
-	title: "Shared/AppCheckboxField",
+	title: "Components/AppCheckboxField",
 	component: FieldDemo,
 } satisfies Meta<typeof FieldDemo>;
 

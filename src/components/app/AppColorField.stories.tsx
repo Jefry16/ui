@@ -27,7 +27,7 @@ function ColorDemo(props: {
 }
 
 const meta = {
-	title: "Shared/AppColorField",
+	title: "Components/AppColorField",
 	component: ColorDemo,
 } satisfies Meta<typeof ColorDemo>;
 

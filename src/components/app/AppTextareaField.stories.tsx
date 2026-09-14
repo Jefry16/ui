@@ -18,7 +18,7 @@ function FieldDemo(props: {
 }
 
 const meta = {
-	title: "Shared/AppTextareaField",
+	title: "Components/AppTextareaField",
 	component: FieldDemo,
 } satisfies Meta<typeof FieldDemo>;
 

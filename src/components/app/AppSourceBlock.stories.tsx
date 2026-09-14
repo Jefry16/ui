@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { AppSourceBlock } from "./AppSourceBlock";
 
 const meta = {
-	title: "Shared/AppSourceBlock",
+	title: "Components/AppSourceBlock",
 	component: AppSourceBlock,
 	args: {
 		label: "Policy body",

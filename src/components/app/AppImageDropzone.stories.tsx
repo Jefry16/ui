@@ -8,7 +8,7 @@ const SAMPLE =
 	);
 
 const meta = {
-	title: "Shared/AppImageDropzone",
+	title: "Components/AppImageDropzone",
 	component: AppImageDropzone,
 	args: {
 		accept: "image/*",

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { AppDetailSkeleton } from "./AppDetailSkeleton";
 
 const meta = {
-	title: "Shared/AppDetailSkeleton",
+	title: "Components/AppDetailSkeleton",
 	component: AppDetailSkeleton,
 	args: { fields: 4 },
 } satisfies Meta<typeof AppDetailSkeleton>;

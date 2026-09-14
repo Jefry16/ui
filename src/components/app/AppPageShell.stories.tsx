@@ -8,7 +8,7 @@ const Block = ({ label }: { label: string }) => (
 );
 
 const meta = {
-	title: "Shared/AppPageShell",
+	title: "Components/AppPageShell",
 	component: AppPageShell,
 } satisfies Meta<typeof AppPageShell>;
 

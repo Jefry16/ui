@@ -37,7 +37,7 @@ function Demo() {
 }
 
 const meta = {
-	title: "Shared/AppTextFilter",
+	title: "Components/AppTextFilter",
 	component: Demo,
 } satisfies Meta<typeof Demo>;
 

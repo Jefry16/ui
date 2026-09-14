@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { AppTranslationNotice } from "./AppTranslationNotice";
 
 const meta = {
-	title: "Shared/AppTranslationNotice",
+	title: "Components/AppTranslationNotice",
 	component: AppTranslationNotice,
 } satisfies Meta<typeof AppTranslationNotice>;
 

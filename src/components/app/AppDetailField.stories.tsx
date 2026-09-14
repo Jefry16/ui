@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { AppDetailField } from "./AppDetailField";
 
 const meta = {
-	title: "Shared/AppDetailField",
+	title: "Components/AppDetailField",
 	component: AppDetailField,
 	args: { label: "Timezone", children: "America/Santo_Domingo" },
 } satisfies Meta<typeof AppDetailField>;

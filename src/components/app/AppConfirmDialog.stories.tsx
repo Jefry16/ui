@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { AppConfirmDialog } from "./AppConfirmDialog";
 
 const meta = {
-	title: "Shared/AppConfirmDialog",
+	title: "Components/AppConfirmDialog",
 	component: AppConfirmDialog,
 	args: {
 		open: true,

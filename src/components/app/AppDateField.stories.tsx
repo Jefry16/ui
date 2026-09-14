@@ -27,7 +27,7 @@ function FieldDemo(props: {
 }
 
 const meta = {
-	title: "Shared/AppDateField",
+	title: "Components/AppDateField",
 	component: FieldDemo,
 } satisfies Meta<typeof FieldDemo>;
 

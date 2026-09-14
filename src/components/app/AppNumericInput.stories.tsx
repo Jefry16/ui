@@ -17,7 +17,7 @@ function Demo({ decimal }: { decimal?: boolean }) {
 }
 
 const meta = {
-	title: "Shared/AppNumericInput",
+	title: "Components/AppNumericInput",
 	component: Demo,
 } satisfies Meta<typeof Demo>;
 

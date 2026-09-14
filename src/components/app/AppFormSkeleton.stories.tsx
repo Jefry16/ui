@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { AppFormSkeleton } from "./AppFormSkeleton";
 
 const meta = {
-	title: "Shared/AppFormSkeleton",
+	title: "Components/AppFormSkeleton",
 	component: AppFormSkeleton,
 	args: { rows: 3 },
 } satisfies Meta<typeof AppFormSkeleton>;

@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 import { AppPageHeader } from "./AppPageHeader";
 
 const meta = {
-	title: "Shared/AppPageHeader",
+	title: "Components/AppPageHeader",
 	component: AppPageHeader,
 	args: { title: "Experiences" },
 } satisfies Meta<typeof AppPageHeader>;

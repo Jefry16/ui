@@ -46,7 +46,7 @@ function FieldDemo({
 }
 
 const meta = {
-	title: "Shared/AppCheckboxGroupField",
+	title: "Components/AppCheckboxGroupField",
 	component: FieldDemo,
 } satisfies Meta<typeof FieldDemo>;
 
