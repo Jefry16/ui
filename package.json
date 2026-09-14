@@ -15,7 +15,6 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "check": "biome check",
-    "format": "biome format",
     "knip": "knip",
     "test": "vitest run --passWithNoTests",
     "pin-ui": "node scripts/pin-ui.mjs",

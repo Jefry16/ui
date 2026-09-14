@@ -1,7 +1,4 @@
 node_modules
 .DS_Store
-dist
 *.local
-coverage
-*storybook.log
 storybook-static
