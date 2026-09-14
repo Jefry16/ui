@@ -1,5 +1,3 @@
 {
-	"$schema": "https://unpkg.com/knip@6/schema.json",
-	"entry": ["src/index.ts", "src/styles.css"],
-	"ignore": ["src/components/ui/**"]
+	"$schema": "https://unpkg.com/knip@6/schema.json"
 }

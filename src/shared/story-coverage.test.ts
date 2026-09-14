@@ -32,8 +32,8 @@ describe("story coverage ratchet", () => {
 		);
 		expect(
 			newMissing,
-			"New App* component(s) without a story. Build the component in /dev first: " +
-				"add a colocated AppX.stories.tsx (see docs/COMPONENTS.md §6). Do NOT add to KNOWN_MISSING; it only shrinks.",
+			"New App* component(s) without a story. Add a colocated " +
+				"AppX.stories.tsx. Do NOT add to KNOWN_MISSING; it only shrinks.",
 		).toEqual([]);
 	});
 
