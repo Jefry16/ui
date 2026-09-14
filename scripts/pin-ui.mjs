@@ -27,7 +27,7 @@ for (const path of [
 }
 
 writeFileSync(
-	join(root, "src/shared/ui-vendor.json"),
+	join(root, "src/gates/ui-vendor.json"),
 	`${JSON.stringify(pinned, null, "\t")}\n`,
 );
 console.log(`pinned ${Object.keys(pinned).length} vendored files`);

@@ -1,7 +1,7 @@
 import type { Decorator, Preview } from "@storybook/react-vite";
 import { TooltipProvider } from "../src/components/ui/tooltip";
-import { UiLabelsProvider } from "../src/shared/labels";
-import { ThemeProvider } from "../src/shared/theme";
+import { UiLabelsProvider } from "../src/providers/labels";
+import { ThemeProvider } from "../src/providers/theme";
 import { testLabels } from "../src/test/labels";
 import "../src/styles.css";
 
