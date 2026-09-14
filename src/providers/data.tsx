@@ -3,6 +3,7 @@ import { createContext, type ReactNode, useContext } from "react";
 export interface UiDataClient {
 	get: <T>(url: string, options?: { signal?: AbortSignal }) => Promise<T>;
 	errorMessage: (error: unknown) => string;
+	isNotFound: (error: unknown) => boolean;
 }
 
 const UiDataContext = createContext<UiDataClient | null>(null);

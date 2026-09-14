@@ -4,6 +4,8 @@ import type { UiDataClient } from "../providers/data";
 export const errorMessage = (error: unknown) =>
 	error instanceof Error ? error.message : String(error);
 
+export const neverNotFound = () => false;
+
 /**
  * A client that serves the given pages in cursor order and records what it
  * was asked. `get` may be replaced per test for failures and other shapes.
@@ -26,13 +28,14 @@ export const pagedClient = <T>(pages: Page<T>[]) => {
 			return (pages[index] ?? { data: [], nextCursor: null }) as R;
 		},
 		errorMessage,
+		isNotFound: neverNotFound,
 	};
 	return { client, urls, cursors };
 };
 
 export const clientFrom = (
 	get: <R>(url: string, options?: { signal?: AbortSignal }) => Promise<R>,
-): UiDataClient => ({ get, errorMessage });
+): UiDataClient => ({ get, errorMessage, isNotFound: neverNotFound });
 
 const STORY_ROWS = [
 	{ id: "1", name: "Ada", createdAt: "2026-08-09T10:00:00Z" },
@@ -43,4 +46,5 @@ const STORY_ROWS = [
 export const storyClient: UiDataClient = {
 	get: async <R>() => ({ data: STORY_ROWS, nextCursor: null }) as unknown as R,
 	errorMessage,
+	isNotFound: neverNotFound,
 };

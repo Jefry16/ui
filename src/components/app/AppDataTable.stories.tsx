@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import type { ColumnDef } from "@tanstack/react-table";
 import { UiDataProvider } from "../../providers/data";
-import { errorMessage } from "../../test/data";
+import { errorMessage, neverNotFound } from "../../test/data";
 import { AppDataTable } from "./AppDataTable";
 import { AppDataTableHeader } from "./AppDataTableHeader";
 import { timestampColumn } from "./table-columns";
@@ -55,6 +55,7 @@ export const Empty: Story = {
 			client={{
 				get: async <R,>() => ({ data: [], nextCursor: null }) as R,
 				errorMessage,
+				isNotFound: neverNotFound,
 			}}
 		>
 			<AppDataTable<Row>
@@ -78,6 +79,7 @@ export const Refused: Story = {
 					throw new Error("The list could not be loaded.");
 				},
 				errorMessage,
+				isNotFound: neverNotFound,
 			}}
 		>
 			<AppDataTable<Row>

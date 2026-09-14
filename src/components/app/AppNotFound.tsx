@@ -1,6 +1,7 @@
 import { ArrowLeft, FileQuestion, type LucideIcon } from "lucide-react";
 import type { ReactNode } from "react";
 import { useUiLabels } from "../../providers/labels";
+import { useUiNavigation } from "../../providers/navigation";
 import { Button } from "../ui/button";
 import { AppEmptyState } from "./AppEmptyState";
 
@@ -9,15 +10,14 @@ export function AppNotFound({
 	icon = FileQuestion,
 	description,
 	action,
-	onBack,
 }: {
 	resource: string;
 	icon?: LucideIcon;
 	description?: string;
 	action?: ReactNode;
-	onBack: () => void;
 }) {
 	const labels = useUiLabels();
+	const { back } = useUiNavigation();
 	return (
 		<AppEmptyState
 			icon={icon}
@@ -25,7 +25,7 @@ export function AppNotFound({
 			description={description ?? labels.resourceNotFound}
 			action={
 				action ?? (
-					<Button variant="outline" onClick={onBack}>
+					<Button variant="outline" onClick={back}>
 						<ArrowLeft className="size-4" />
 						{labels.goBack}
 					</Button>

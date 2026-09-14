@@ -4,7 +4,7 @@ import { AppNotFound } from "./AppNotFound";
 const meta = {
 	title: "Components/AppNotFound",
 	component: AppNotFound,
-	args: { resource: "Experience", onBack: () => {} },
+	args: { resource: "Experience" },
 } satisfies Meta<typeof AppNotFound>;
 
 export default meta;
