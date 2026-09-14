@@ -30,6 +30,9 @@ export interface UiLabels {
 	notTranslated: string;
 	translation: string;
 	translationFallbackHelp: string;
+	notFound: (resource: string) => string;
+	resourceNotFound: string;
+	goBack: string;
 }
 
 const UiLabelsContext = createContext<UiLabels | null>(null);
