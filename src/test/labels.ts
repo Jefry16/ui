@@ -31,4 +31,7 @@ export const testLabels: UiLabels = {
 	translation: "Translation",
 	translationFallbackHelp:
 		"Leave a field empty to use the default-language text.",
+	notFound: (resource) => `${resource} not found`,
+	resourceNotFound: "It may have been removed, or you don't have access to it.",
+	goBack: "Go back",
 };
