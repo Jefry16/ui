@@ -32,6 +32,7 @@ const DEPENDENCIES = [
 
 const PEER_DEPENDENCIES = [
 	"@tanstack/react-form",
+	"@tanstack/react-query",
 	"@tanstack/react-table",
 	"react",
 	"react-dom",
@@ -45,6 +46,7 @@ const DEV_DEPENDENCIES = [
 	"@storybook/react-vite",
 	"@tailwindcss/vite",
 	"@tanstack/react-form",
+	"@tanstack/react-query",
 	"@tanstack/react-table",
 	"@testing-library/dom",
 	"@testing-library/jest-dom",

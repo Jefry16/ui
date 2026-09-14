@@ -34,4 +34,5 @@ export const testLabels: UiLabels = {
 	notFound: (resource) => `${resource} not found`,
 	resourceNotFound: "It may have been removed, or you don't have access to it.",
 	goBack: "Go back",
+	filterColumn: (column) => `Filter by ${column}`,
 };

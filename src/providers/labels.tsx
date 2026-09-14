@@ -33,6 +33,7 @@ export interface UiLabels {
 	notFound: (resource: string) => string;
 	resourceNotFound: string;
 	goBack: string;
+	filterColumn: (column: string) => string;
 }
 
 const UiLabelsContext = createContext<UiLabels | null>(null);
