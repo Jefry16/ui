@@ -4,7 +4,7 @@ import type { AppAction } from "./AppPageActions";
 import { AppPageActions } from "./AppPageActions";
 
 const meta = {
-	title: "Shared/AppPageActions",
+	title: "Components/AppPageActions",
 	component: AppPageActions,
 	args: { canWrite: true },
 } satisfies Meta<typeof AppPageActions>;

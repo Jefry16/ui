@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 import { AppNotPermitted } from "./AppNotPermitted";
 
 const meta = {
-	title: "Shared/AppNotPermitted",
+	title: "Components/AppNotPermitted",
 	component: AppNotPermitted,
 	decorators: [
 		(Story) => (

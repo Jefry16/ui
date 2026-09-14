@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 import { AppEmptyState } from "./AppEmptyState";
 
 const meta = {
-	title: "Shared/AppEmptyState",
+	title: "Components/AppEmptyState",
 	component: AppEmptyState,
 	args: {
 		icon: Users,

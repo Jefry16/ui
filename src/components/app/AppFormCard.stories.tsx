@@ -19,7 +19,7 @@ const fields = (
 );
 
 const meta = {
-	title: "Shared/AppFormCard",
+	title: "Components/AppFormCard",
 	component: AppFormCard,
 	args: {
 		onSubmit: () => {},

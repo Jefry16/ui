@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { AppAlert } from "./AppAlert";
 
 const meta = {
-	title: "Shared/AppAlert",
+	title: "Components/AppAlert",
 	component: AppAlert,
 	args: {
 		variant: "destructive",

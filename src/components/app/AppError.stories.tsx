@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { AppError } from "./AppError";
 
 const meta = {
-	title: "Shared/AppError",
+	title: "Components/AppError",
 	component: AppError,
 } satisfies Meta<typeof AppError>;
 

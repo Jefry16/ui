@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { AppFilterInput } from "./AppFilterInput";
 
 const meta = {
-	title: "Shared/AppFilterInput",
+	title: "Components/AppFilterInput",
 	component: AppFilterInput,
 	args: { placeholder: "Search…" },
 	decorators: [

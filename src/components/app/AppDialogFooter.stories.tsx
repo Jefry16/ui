@@ -3,7 +3,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../ui/dialog";
 import { AppDialogFooter } from "./AppDialogFooter";
 
 const meta = {
-	title: "Shared/AppDialogFooter",
+	title: "Components/AppDialogFooter",
 	component: AppDialogFooter,
 	args: { onConfirm: () => {} },
 	decorators: [

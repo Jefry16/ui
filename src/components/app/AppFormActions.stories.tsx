@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 import { AppFormActions } from "./AppFormActions";
 
 const meta = {
-	title: "Shared/AppFormActions",
+	title: "Components/AppFormActions",
 	component: AppFormActions,
 	args: { isPending: false, submitLabel: "Save changes" },
 } satisfies Meta<typeof AppFormActions>;

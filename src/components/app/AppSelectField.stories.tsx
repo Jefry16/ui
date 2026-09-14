@@ -21,7 +21,7 @@ function SelectDemo(props: { label: string; placeholder?: string }) {
 }
 
 const meta = {
-	title: "Shared/AppSelectField",
+	title: "Components/AppSelectField",
 	component: SelectDemo,
 } satisfies Meta<typeof SelectDemo>;
 

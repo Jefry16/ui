@@ -3,7 +3,7 @@ import { Card, CardContent } from "../ui/card";
 import { AppLoadingBlock } from "./AppLoadingBlock";
 
 const meta = {
-	title: "Shared/AppLoadingBlock",
+	title: "Components/AppLoadingBlock",
 	component: AppLoadingBlock,
 	decorators: [
 		(Story) => (

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { AppRoutePending } from "./AppRoutePending";
 
 const meta = {
-	title: "Shared/AppRoutePending",
+	title: "Components/AppRoutePending",
 	component: AppRoutePending,
 } satisfies Meta<typeof AppRoutePending>;
 

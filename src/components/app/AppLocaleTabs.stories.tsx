@@ -22,7 +22,7 @@ function Demo({ translated }: { translated: string[] }) {
 }
 
 const meta = {
-	title: "Shared/AppLocaleTabs",
+	title: "Components/AppLocaleTabs",
 	component: Demo,
 } satisfies Meta<typeof Demo>;
 

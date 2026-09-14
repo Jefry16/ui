@@ -55,7 +55,7 @@ function Harness({ items }: { items: SetFilterItem[] }) {
 }
 
 const meta = {
-	title: "Shared/AppSetFilter",
+	title: "Components/AppSetFilter",
 	component: AppSetFilter,
 	args: {
 		headerContext: {

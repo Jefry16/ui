@@ -14,7 +14,7 @@ function PasswordDemo(props: { label: string; description?: string }) {
 }
 
 const meta = {
-	title: "Shared/AppPasswordField",
+	title: "Components/AppPasswordField",
 	component: PasswordDemo,
 } satisfies Meta<typeof PasswordDemo>;
 

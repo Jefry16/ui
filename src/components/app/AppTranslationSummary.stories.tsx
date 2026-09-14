@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { AppTranslationSummary } from "./AppTranslationSummary";
 
 const meta = {
-	title: "Shared/AppTranslationSummary",
+	title: "Components/AppTranslationSummary",
 	component: AppTranslationSummary,
 	args: {
 		fields: [
