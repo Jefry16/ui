@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   verify:
-    name: Verify (typecheck · check · knip · tests · storybook)
+    name: Verify (typecheck · check · knip · tests · storybook · smoke)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -32,3 +32,5 @@ jobs:
       - run: pnpm test
       - run: pnpm build-storybook
       - run: pnpm check-storybook-index
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm smoke-storybook
