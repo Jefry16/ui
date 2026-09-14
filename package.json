@@ -25,6 +25,7 @@
   },
   "peerDependencies": {
     "@tanstack/react-form": "^1.28.6",
+    "@tanstack/react-query": "^5.100.0",
     "@tanstack/react-table": "^8.21.3",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
@@ -50,6 +51,7 @@
     "@storybook/react-vite": "^10.5.3",
     "@tailwindcss/vite": "^4.1.18",
     "@tanstack/react-form": "^1.28.6",
+    "@tanstack/react-query": "5.100.14",
     "@tanstack/react-table": "^8.21.3",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",

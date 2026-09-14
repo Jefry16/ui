@@ -1,8 +1,9 @@
 # @vointika/ui
 
 This package is the admin app's presentational layer. It renders. It knows
-no route and no endpoint, and it is consumed as TypeScript source from git
-by one app. Everything below follows from that sentence.
+no route and names no endpoint, has no HTTP client of its own and is handed
+one, and it is consumed as TypeScript source from git by one app. Everything
+below follows from that sentence.
 
 ## Rules, each with the gate that enforces it
 
@@ -19,8 +20,10 @@ the list never pretends.
    Hole: `pin-ui` after a hand edit launders the edit. Review catches that.
 
 2. **The dependency set is closed.** A new dependency is a deliberate line
-   in the gate, in the same PR, with the reason in the PR body. A router, a
-   query client or an HTTP client never belongs here.
+   in the gate, in the same PR, with the reason in the PR body. A router or
+   an HTTP client never belongs here; React Query is a peer because the data
+   layer is built on it, and the client it calls arrives through
+   `UiDataProvider` (`get`, `errorMessage`).
    Gate: `src/gates/boundary.test.ts`.
 
 3. **Imports are relative.** The `#/` alias exists for the shadcn CLI and
@@ -68,7 +71,8 @@ Dependencies point down and never up. Nothing points out to an app concern.
 | folder | holds | may import |
 | --- | --- | --- |
 | `src/styles.css`, `src/lib`, `src/hooks` | tokens, `cn`, `use-mobile` | nothing above |
-| `src/providers` | the theme and label providers | the row above |
+| `src/providers` | the theme, label and data-client providers | the row above |
+| `src/data` | the list convention: query state, the page drain, the table query | the rows above |
 | `src/components/ui` | the vendored primitives (CLI path, never renamed) | the rows above |
 | `src/components/app` | the App layer | the rows above |
 | `src/stories/primitives` | the primitives shown in Storybook, never mounted by a test | the primitives |
