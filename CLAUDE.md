@@ -52,6 +52,13 @@ the list never pretends.
 9. **No comments**, except a `biome-ignore` and a trap a name cannot carry.
    No gate.
 
+10. **Vendored primitives are not tested here.** Their tests are upstream's;
+    one written here pins a file this repo does not own and breaks on the
+    next `shadcn add`. No test and no story is named for a primitive, none
+    lives in `src/components/ui`, and a test imports a primitive only as
+    scaffolding for a subject of ours.
+    Gate: `src/gates/ui-vendor.test.ts`.
+
 ## Layout
 
 Dependencies point down and never up. Nothing points out to an app concern.
