@@ -57,6 +57,7 @@ const DEV_DEPENDENCIES = [
 	"axe-core",
 	"jsdom",
 	"knip",
+	"playwright",
 	"react",
 	"react-dom",
 	"storybook",

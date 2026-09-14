@@ -78,15 +78,22 @@ Dependencies point down and never up. Nothing points out to an app concern.
 The public surface is `src/index.ts` and `src/styles.css`, and only those:
 `package.json`'s `exports` map refuses a deeper import.
 
+11. **The look arrives.** The built Storybook, opened in a real browser,
+    is styled: the font loads, the tokens resolve, a button is painted, an
+    input has a border, the dark palette differs from the light one. The
+    gate says "styled", never "styled exactly like this", so a token change
+    never breaks it and a missing plugin always does.
+    Gate: `pnpm smoke-storybook`, after `pnpm build-storybook`.
+
 ## Gates
 
 ```
 pnpm typecheck && pnpm check && pnpm knip && pnpm test
-pnpm build-storybook && pnpm check-storybook-index
+pnpm build-storybook && pnpm check-storybook-index && pnpm smoke-storybook
 ```
 
-Not gated yet: the look. Every gate above was green while every component
-rendered unstyled, because none of them opens a browser.
+The smoke needs Chromium: `pnpm exec playwright install chromium` once per
+machine.
 
 ## Working rules
 
