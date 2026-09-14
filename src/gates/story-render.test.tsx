@@ -7,7 +7,10 @@ setProjectAnnotations([preview.default]);
 
 const ERROR_UI = "Story did something wrong";
 
-const modules = import.meta.glob("/src/**/*.stories.tsx", { eager: true });
+const modules = import.meta.glob(
+	["/src/components/app/*.stories.tsx", "/src/providers/*.stories.tsx"],
+	{ eager: true },
+);
 
 describe.each(Object.entries(modules))("%s", (_path, mod) => {
 	const composed = composeStories(mod as never) as Record<

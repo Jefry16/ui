@@ -54,9 +54,11 @@ the list never pretends.
 
 10. **Vendored primitives are not tested here.** Their tests are upstream's;
     one written here pins a file this repo does not own and breaks on the
-    next `shadcn add`. No test and no story is named for a primitive, none
-    lives in `src/components/ui`, and a test imports a primitive only as
-    scaffolding for a subject of ours.
+    next `shadcn add`. No test is named for a primitive, nothing but
+    components lives in `src/components/ui`, and a test imports a primitive
+    only as scaffolding for a subject of ours. Primitives are shown in
+    Storybook from `src/stories/primitives`, the one place story-render
+    never mounts, so they are seen and not tested.
     Gate: `src/gates/ui-vendor.test.ts`.
 
 ## Layout
@@ -69,6 +71,7 @@ Dependencies point down and never up. Nothing points out to an app concern.
 | `src/providers` | the theme and label providers | the row above |
 | `src/components/ui` | the vendored primitives (CLI path, never renamed) | the rows above |
 | `src/components/app` | the App layer | the rows above |
+| `src/stories/primitives` | the primitives shown in Storybook, never mounted by a test | the primitives |
 | `src/gates` | the tests that enforce this file | anything |
 | `src/test` | test helpers | anything |
 

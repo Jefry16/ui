@@ -27,6 +27,8 @@ const PRIMITIVES = new Set(
 		normalised(name.replace(/\.tsx$/, "")),
 	),
 );
+const SHOWCASE_DIR = "src/stories/primitives";
+const SHOWCASE = /\/src\/stories\/primitives\/[A-Za-z]+\.stories\.tsx$/;
 const IMPORTS_PRIMITIVE = /from\s*["'][^"']*\/ui\/[a-z-]+["']/;
 const IMPORTS_OURS_BY_PATH =
 	/from\s*["'][^"']*\/(?:components\/app|providers)\/[A-Za-z]+["']/;
@@ -97,12 +99,17 @@ describe("vendored primitives are not tested here", () => {
 		expect(others, NOT_TESTED).toEqual([]);
 	});
 
-	it("no test or story is named for a primitive", () => {
+	it("no test, and no story outside the showcase, is named for a primitive", () => {
 		const named = sourceFiles
 			.filter(isTestOrStory)
+			.filter((path) => !SHOWCASE.test(path) || /\.test\.tsx?$/.test(path))
 			.filter((path) => PRIMITIVES.has(normalised(subjectOf(path))))
 			.map((path) => relative(ROOT, path));
-		expect(named, NOT_TESTED).toEqual([]);
+		expect(
+			named,
+			`${NOT_TESTED} A primitive is shown in Storybook from ${SHOWCASE_DIR} ` +
+				"only, where story-render never mounts it.",
+		).toEqual([]);
 	});
 
 	it("a test imports a primitive only as scaffolding for a subject of ours", () => {
