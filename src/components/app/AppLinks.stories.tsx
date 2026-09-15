@@ -27,6 +27,14 @@ export const New: Story = {
 	render: () => <AppNewLink to="/experiences/new">New experience</AppNewLink>,
 };
 
+export const NewSmall: Story = {
+	render: () => (
+		<AppNewLink to="/experiences/new" size="sm">
+			New experience
+		</AppNewLink>
+	),
+};
+
 export const Resource: Story = {
 	render: () => (
 		<AppResourceLink to="/experiences/1">Kayak tour</AppResourceLink>
