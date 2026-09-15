@@ -34,6 +34,9 @@ export interface UiLabels {
 	resourceNotFound: string;
 	goBack: string;
 	filterColumn: (column: string) => string;
+	resourceCreated: (resource: string) => string;
+	resourceUpdated: (resource: string) => string;
+	resourceDeleted: (resource: string) => string;
 }
 
 const UiLabelsContext = createContext<UiLabels | null>(null);
