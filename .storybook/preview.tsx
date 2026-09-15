@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "../src/components/ui/tooltip";
 import { UiDataProvider } from "../src/providers/data";
 import { UiLabelsProvider } from "../src/providers/labels";
+import { UiNavigationProvider } from "../src/providers/navigation";
 import { ThemeProvider } from "../src/providers/theme";
 import { storyClient } from "../src/test/data";
 import { testLabels } from "../src/test/labels";
@@ -17,9 +18,11 @@ const withProviders: Decorator = (Story) => (
 		<UiLabelsProvider labels={testLabels}>
 			<QueryClientProvider client={queryClient}>
 				<UiDataProvider client={storyClient}>
-					<TooltipProvider>
-						<Story />
-					</TooltipProvider>
+					<UiNavigationProvider navigation={{ back: () => {} }}>
+						<TooltipProvider>
+							<Story />
+						</TooltipProvider>
+					</UiNavigationProvider>
 				</UiDataProvider>
 			</QueryClientProvider>
 		</UiLabelsProvider>

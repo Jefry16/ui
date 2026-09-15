@@ -71,7 +71,7 @@ Dependencies point down and never up. Nothing points out to an app concern.
 | folder | holds | may import |
 | --- | --- | --- |
 | `src/styles.css`, `src/lib`, `src/hooks` | tokens, `cn`, `use-mobile` | nothing above |
-| `src/providers` | the theme, label and data-client providers | the row above |
+| `src/providers` | the theme, label, data-client and navigation providers | the row above |
 | `src/data` | the list convention: query state, the page drain, the table query | the rows above |
 | `src/components/ui` | the vendored primitives (CLI path, never renamed) | the rows above |
 | `src/components/app` | the App layer | the rows above |
