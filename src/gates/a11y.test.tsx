@@ -1,5 +1,8 @@
+import { screen } from "@testing-library/react";
 import { Languages, Pencil, Trash2 } from "lucide-react";
 import { describe, it, vi } from "vitest";
+import { AppDataTable } from "../components/app/AppDataTable";
+import { AppDataTableHeader } from "../components/app/AppDataTableHeader";
 import { AppDetailField } from "../components/app/AppDetailField";
 import { AppDialogFooter } from "../components/app/AppDialogFooter";
 import {
@@ -7,9 +10,11 @@ import {
 	AppPageActions,
 } from "../components/app/AppPageActions";
 import { AppSourceBlock } from "../components/app/AppSourceBlock";
+import { timestampColumn } from "../components/app/table-columns";
 import { Card, CardContent } from "../components/ui/card";
 import { Dialog, DialogContent, DialogTitle } from "../components/ui/dialog";
 import { expectNoA11yViolations } from "../test/a11y";
+import { pagedClient } from "../test/data";
 import { renderWithProviders } from "../test/test-utils";
 
 describe("accessibility", () => {
@@ -67,6 +72,46 @@ describe("accessibility", () => {
 				</CardContent>
 			</Card>,
 		);
+		await expectNoA11yViolations(container);
+	});
+
+	it("a table announces its sort state and names each filter", async () => {
+		const { client } = pagedClient([
+			{
+				data: [{ id: "1", createdAt: "2026-08-09T10:00:00Z" }],
+				nextCursor: null,
+			},
+		]);
+		const { container } = renderWithProviders(
+			<AppDataTable
+				columns={[
+					timestampColumn<{ id: string; createdAt: string }>(
+						"createdAt",
+						"Created",
+						() => "9 Aug 2026",
+					),
+					{
+						id: "name",
+						enableSorting: true,
+						// biome-ignore lint/suspicious/noExplicitAny: a column list for one render
+						header: (ctx: any) => (
+							<AppDataTableHeader
+								label="Name"
+								headerContext={ctx}
+								allowFiltering="text"
+							/>
+						),
+						cell: () => "One",
+						// biome-ignore lint/suspicious/noExplicitAny: a column list for one render
+					} as any,
+				]}
+				endpoint="/things"
+				queryKey={["a11y-things"]}
+				emptyState={{ title: "Nothing", description: "" }}
+			/>,
+			{ client },
+		);
+		await screen.findByText("9 Aug 2026");
 		await expectNoA11yViolations(container);
 	});
 });
