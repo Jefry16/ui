@@ -23,5 +23,7 @@
 	"src/components/ui/spinner.tsx": "7f107dbbeb52107a41523e12dc2134d2124f8f98e5f71a59840de8a688176e4e",
 	"src/components/ui/table.tsx": "1c7b6ee30a140d978b68fe723ba0ec6db58a81466b607f975e35e55adfcd298f",
 	"src/components/ui/textarea.tsx": "093dd4170d8ada46d426d9723ec75e74e94a7c1ad148a82a7d8aa3d6ae5f0cb0",
+	"src/components/ui/toggle-group.tsx": "9547e2a5cd63599af5504ac984e5c8448534de6bc499b335658d598e781489bf",
+	"src/components/ui/toggle.tsx": "2f99e9818f5d7539a2206d94fe7967cc073df243fbf263db517782300a7422af",
 	"src/components/ui/tooltip.tsx": "6981d78d0c0cf972b4e7f2e43a0e78fac5ae762690a0a8327cc955de110a279a"
 }

@@ -13,9 +13,12 @@ the list never pretends.
 
 1. **No vendored shadcn file is ever edited by hand.** `src/components/ui`
    and `components.json` are pinned by hash. To add or upgrade a primitive:
-   `pnpm dlx shadcn@latest add <name>`, then `pnpm pin-ui`, in a PR that says
-   so. To change how a primitive looks: a token in `src/styles.css`, or a
-   wrapper in `src/components/app`.
+   `pnpm exec shadcn add <name>`, then `pnpm pin-ui`, in a PR that says
+   so. The CLI writes the `#/` alias and `import { cn } from "cn"` with an
+   npm package of that name beside it; `pin-ui` rewrites both imports to
+   `src/lib/utils`, and the package is dropped from `package.json` rather
+   than admitted. To change how a primitive looks: a token in
+   `src/styles.css`, or a wrapper in `src/components/app`.
    Gate: `src/gates/ui-vendor.test.ts`.
    Hole: `pin-ui` after a hand edit launders the edit. Review catches that.
 

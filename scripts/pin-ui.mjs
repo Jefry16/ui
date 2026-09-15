@@ -7,10 +7,16 @@ const UI = "src/components/ui";
 
 const relativeImports = (path, source) => {
 	const dir = join(root, path, "..");
-	return source.replace(/(from |import )"#\/([^"]+)"/g, (_, lead, target) => {
+	const toSrc = (target) => {
 		const rel = relative(dir, join(root, "src", target)).replaceAll("\\", "/");
-		return `${lead}"${rel.startsWith(".") ? rel : `./${rel}`}"`;
-	});
+		return rel.startsWith(".") ? rel : `./${rel}`;
+	};
+	return source
+		.replace(
+			/(from |import )"#\/([^"]+)"/g,
+			(_, lead, target) => `${lead}"${toSrc(target)}"`,
+		)
+		.replace(/(from )"cn"/g, (_, lead) => `${lead}"${toSrc("lib/utils")}"`);
 };
 
 const pinned = {};

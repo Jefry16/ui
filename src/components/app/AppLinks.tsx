@@ -1,3 +1,4 @@
+import type { VariantProps } from "class-variance-authority";
 import { ArrowLeft, Plus } from "lucide-react";
 import { type ComponentType, Fragment, type ReactNode } from "react";
 import { cn } from "../../lib/utils";
@@ -9,7 +10,7 @@ import {
 	BreadcrumbPage,
 	BreadcrumbSeparator,
 } from "../ui/breadcrumb";
-import { Button } from "../ui/button";
+import { Button, type buttonVariants } from "../ui/button";
 
 export interface LinkLikeProps {
 	to?: string;
@@ -46,8 +47,14 @@ export function createAppLinks(RouterLink: AnyLink) {
 		</AppLink>
 	);
 
-	const AppNewLink = ({ children, ...rest }: LinkLikeProps) => (
-		<Button asChild>
+	const AppNewLink = ({
+		children,
+		size,
+		...rest
+	}: LinkLikeProps & {
+		size?: VariantProps<typeof buttonVariants>["size"];
+	}) => (
+		<Button asChild size={size}>
 			<AppLink {...rest}>
 				<Plus />
 				{children}
