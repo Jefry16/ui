@@ -27,3 +27,12 @@ export const WithAction: Story = {
 export const TitleOnly: Story = {
 	args: { icon: undefined, description: undefined },
 };
+
+export const Inline: Story = {
+	args: {
+		variant: "inline",
+		icon: undefined,
+		title: "No social links yet",
+		description: undefined,
+	},
+};
