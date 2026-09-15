@@ -32,7 +32,7 @@ const SHOWCASE = /\/src\/stories\/primitives\/[A-Za-z]+\.stories\.tsx$/;
 const IMPORTS_PRIMITIVE = /from\s*["'][^"']*\/ui\/[a-z-]+["']/;
 const IMPORTS_OURS_BY_PATH =
 	/from\s*["'][^"']*\/(?:components\/app|providers)\/[A-Za-z]+["']/;
-const IMPORTS_SIBLING = /from\s*["']\.\/[A-Za-z]+["']/;
+const IMPORTS_SIBLING = /from\s*["']\.\/[A-Za-z-]+["']/;
 const LIVES_WITH_OURS = /\/src\/(?:components\/app|providers)\//;
 const importsOurs = (path: string, source: string) =>
 	IMPORTS_OURS_BY_PATH.test(source) ||
