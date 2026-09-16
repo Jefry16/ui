@@ -20,6 +20,7 @@ const DEPENDENCIES = [
 	"@fontsource-variable/geist",
 	"class-variance-authority",
 	"clsx",
+	"cmdk",
 	"lucide-react",
 	"next-themes",
 	"radix-ui",

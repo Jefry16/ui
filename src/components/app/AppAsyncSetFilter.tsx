@@ -1,21 +1,9 @@
 import type { HeaderContext } from "@tanstack/react-table";
+import { type PathRow, readPath } from "../../data/read-path";
 import { useAllPages } from "../../data/use-all-pages";
 import { AppLoadingBlock } from "./AppLoadingBlock";
 import { AppQueryState } from "./AppQueryState";
 import { AppSetFilter, type SetFilterItem } from "./AppSetFilter";
-
-type AsyncRow = Record<string, unknown>;
-
-const readPath = (row: AsyncRow, path: string): unknown =>
-	path
-		.split(".")
-		.reduce<unknown>(
-			(acc, key) =>
-				acc && typeof acc === "object"
-					? (acc as Record<string, unknown>)[key]
-					: undefined,
-			row,
-		);
 
 interface Props<TData> {
 	headerContext: HeaderContext<TData, unknown>;
@@ -32,7 +20,7 @@ export function AppAsyncSetFilter<TData>({
 	valueKey = "id",
 	labelKey = "name",
 }: Props<TData>) {
-	const options = useAllPages<AsyncRow>(queryKey, endpoint);
+	const options = useAllPages<PathRow>(queryKey, endpoint);
 
 	return (
 		<AppQueryState

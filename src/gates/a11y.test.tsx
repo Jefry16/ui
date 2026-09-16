@@ -1,6 +1,9 @@
+import { useForm } from "@tanstack/react-form";
 import { screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { Languages, Pencil, Trash2 } from "lucide-react";
 import { describe, it, vi } from "vitest";
+import { AppComboboxField } from "../components/app/AppComboboxField";
 import { AppDataTable } from "../components/app/AppDataTable";
 import { AppDataTableHeader } from "../components/app/AppDataTableHeader";
 import { AppDetailField } from "../components/app/AppDetailField";
@@ -14,7 +17,7 @@ import { timestampColumn } from "../components/app/table-columns";
 import { Card, CardContent } from "../components/ui/card";
 import { Dialog, DialogContent, DialogTitle } from "../components/ui/dialog";
 import { expectNoA11yViolations } from "../test/a11y";
-import { pagedClient } from "../test/data";
+import { clientFrom, pagedClient } from "../test/data";
 import { renderWithProviders } from "../test/test-utils";
 
 describe("accessibility", () => {
@@ -113,5 +116,44 @@ describe("accessibility", () => {
 		);
 		await screen.findByText("9 Aug 2026");
 		await expectNoA11yViolations(container);
+	});
+	it("a combobox field is labelled closed and lists real options open", async () => {
+		const rows = [
+			{ id: "1", name: "Boat trips" },
+			{ id: "2", name: "Hikes" },
+		];
+		const client = clientFrom(async <R,>(url: string) => {
+			const byId = rows.find((row) => url === `/categories/${row.id}`);
+			return (byId ?? { data: rows, nextCursor: null }) as R;
+		});
+		const Harness = () => {
+			const form = useForm({
+				defaultValues: { category: "1" as string | null },
+			});
+			return (
+				<main>
+					<form.Field name="category">
+						{(field) => (
+							<AppComboboxField
+								field={field}
+								label="Category"
+								endpoint="/categories"
+								queryKey={["a11y-categories"]}
+								description="Optional."
+							/>
+						)}
+					</form.Field>
+				</main>
+			);
+		};
+		const { container } = renderWithProviders(<Harness />, { client });
+		await screen.findByText("Boat trips");
+		await expectNoA11yViolations(container);
+
+		await userEvent
+			.setup()
+			.click(screen.getByRole("combobox", { name: "Category" }));
+		await screen.findByRole("option", { name: "Hikes" });
+		await expectNoA11yViolations(container.ownerDocument.body);
 	});
 });
