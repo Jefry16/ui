@@ -6,6 +6,8 @@ export const testLabels: UiLabels = {
 	clear: "Clear",
 	search: "Search",
 	noResults: "No results",
+	loadMore: "Load more",
+	notSet: "Not set",
 	nSelected: (count) => `${count} selected`,
 	textOperators: {
 		eq: "Equals",

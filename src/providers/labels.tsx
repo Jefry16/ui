@@ -14,6 +14,8 @@ export interface UiLabels {
 	clear: string;
 	search: string;
 	noResults: string;
+	loadMore: string;
+	notSet: string;
 	nSelected: (count: number) => string;
 	textOperators: Record<TextOperator, string>;
 	moreActions: string;
