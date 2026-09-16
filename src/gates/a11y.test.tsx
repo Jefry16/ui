@@ -6,6 +6,7 @@ import { describe, it, vi } from "vitest";
 import { AppComboboxField } from "../components/app/AppComboboxField";
 import { AppDataTable } from "../components/app/AppDataTable";
 import { AppDataTableHeader } from "../components/app/AppDataTableHeader";
+import { AppDatePicker } from "../components/app/AppDatePicker";
 import { AppDetailField } from "../components/app/AppDetailField";
 import { AppDialogFooter } from "../components/app/AppDialogFooter";
 import {
@@ -16,6 +17,7 @@ import { AppSourceBlock } from "../components/app/AppSourceBlock";
 import { timestampColumn } from "../components/app/table-columns";
 import { Card, CardContent } from "../components/ui/card";
 import { Dialog, DialogContent, DialogTitle } from "../components/ui/dialog";
+import { Field, FieldLabel } from "../components/ui/field";
 import { expectNoA11yViolations } from "../test/a11y";
 import { clientFrom, pagedClient } from "../test/data";
 import { renderWithProviders } from "../test/test-utils";
@@ -154,6 +156,27 @@ describe("accessibility", () => {
 			.setup()
 			.click(screen.getByRole("combobox", { name: "Category" }));
 		await screen.findByRole("option", { name: "Hikes" });
+		await expectNoA11yViolations(container.ownerDocument.body);
+	});
+	it("a date picker is labelled closed and a real grid open", async () => {
+		const { container } = renderWithProviders(
+			<main>
+				<Field>
+					<FieldLabel htmlFor="when">Valid from</FieldLabel>
+					<AppDatePicker
+						id="when"
+						value="2026-08-01"
+						onValueChange={() => {}}
+					/>
+				</Field>
+			</main>,
+		);
+		await expectNoA11yViolations(container);
+
+		await userEvent
+			.setup()
+			.click(screen.getByRole("button", { name: "Valid from" }));
+		await screen.findByRole("grid");
 		await expectNoA11yViolations(container.ownerDocument.body);
 	});
 });

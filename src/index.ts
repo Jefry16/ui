@@ -9,6 +9,7 @@ export * from "./components/app/AppConfirmDialog";
 export * from "./components/app/AppDataTable";
 export * from "./components/app/AppDataTableHeader";
 export * from "./components/app/AppDateField";
+export * from "./components/app/AppDatePicker";
 export * from "./components/app/AppDetailField";
 export * from "./components/app/AppDetailSkeleton";
 export * from "./components/app/AppDialogFooter";
