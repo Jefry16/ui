@@ -42,7 +42,7 @@ export function AppDataTableHeader<TData>(props: Props<TData>) {
 			{canSort ? (
 				<Button
 					variant="link"
-					className="cursor-pointer p-0 font-semibold hover:no-underline has-[>svg]:p-0"
+					className="cursor-pointer p-0 font-semibold text-foreground hover:no-underline has-[>svg]:p-0"
 					onClick={() => column.toggleSorting()}
 				>
 					{label}
