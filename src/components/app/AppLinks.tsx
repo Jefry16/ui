@@ -65,7 +65,7 @@ export function createAppLinks(RouterLink: AnyLink) {
 	const AppResourceLink = ({ className, ...rest }: LinkLikeProps) => (
 		<AppLink
 			className={cn(
-				"text-info underline-offset-2 hover:text-info/80 hover:underline",
+				"text-primary underline-offset-2 hover:text-primary/80 hover:underline",
 				className,
 			)}
 			{...rest}
