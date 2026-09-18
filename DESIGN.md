@@ -26,11 +26,19 @@ hue 264) so the grey belongs to the brand. Chart tokens stay achromatic.
 ## State
 
 `--destructive`, `--success`, `--warning` and `--info` are state colours and
-are not brand. `--info` stays the alert colour; it no longer colours links.
-It sits on the brand hue, a step darker than the primary in light and a
-step lighter in dark, so a notice and a button are never two blues and
-never the same one. Every state colour carries a title at AA on the
-alert's ground: light `--warning` is amber-700, not amber-600, for that.
+are not brand, but each is drawn from the two hues the brand owns rather
+than from a stock palette. `--info` sits on the brand hue itself, 264.376,
+a step darker than the primary in light and a step lighter with less chroma
+in dark, so a notice and a button are never two blues and never the same
+one. `--success` takes the lime's hue, 128, darkened to a moss in light and
+lifted to a lighter lime sibling in dark, never the sidebar lime itself, so
+the active item stays the one element painting it. `--warning` is an ochre
+at hue 80, between the lime and the red, a yellow-brown rather than an
+orange. `--destructive` is a crimson at hue 12, red cooled toward the blue
+side of the wheel the brand sits on, so it never reads as a second orange
+beside the warning. Every state colour carries a title at AA on the alert's
+ground in both themes, and `--success` carries text at AA on white, which
+the auth message card relies on.
 
 An alert is a surface, not coloured text: the ground is the state colour
 at 8%, the edge at 25%, the icon and title in the state colour, and the
