@@ -10,16 +10,19 @@ import { AppDataTableHeader } from "../components/app/AppDataTableHeader";
 import { AppDatePicker } from "../components/app/AppDatePicker";
 import { AppDetailField } from "../components/app/AppDetailField";
 import { AppDialogFooter } from "../components/app/AppDialogFooter";
+import { AppLabelledControl } from "../components/app/AppLabelledControl";
 import {
 	type AppAction,
 	AppPageActions,
 } from "../components/app/AppPageActions";
 import { AppSelect } from "../components/app/AppSelect";
 import { AppSourceBlock } from "../components/app/AppSourceBlock";
+import { AppStaticTable } from "../components/app/AppStaticTable";
+import { AppTextarea } from "../components/app/AppTextarea";
+import { AppTextInput } from "../components/app/AppTextInput";
 import { timestampColumn } from "../components/app/table-columns";
 import { Button } from "../components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "../components/ui/dialog";
-import { Field, FieldLabel } from "../components/ui/field";
 import { SelectItem } from "../components/ui/select";
 import { expectNoA11yViolations } from "../test/a11y";
 import { clientFrom, pagedClient } from "../test/data";
@@ -95,6 +98,58 @@ describe("accessibility", () => {
 					<AppDetailField label="Type">product</AppDetailField>
 				</dl>
 			</AppCard>,
+		);
+		await expectNoA11yViolations(container);
+	});
+
+	it("a labelled control names its control, a row and a group alike", async () => {
+		const { container } = renderWithProviders(
+			<main>
+				<AppLabelledControl label="Colour" code="custom.colour" htmlFor="c">
+					<AppTextInput id="c" value="" onValueChange={() => {}} />
+				</AppLabelledControl>
+				<AppLabelledControl
+					label="Adults"
+					hint="3 booked"
+					htmlFor="adults"
+					layout="row"
+					invalid
+					errors={[{ message: "Below the booked count" }]}
+				>
+					<AppTextInput
+						id="adults"
+						value="1"
+						aria-invalid
+						onValueChange={() => {}}
+					/>
+				</AppLabelledControl>
+				<AppLabelledControl label="Notes" required>
+					<AppTextarea
+						aria-label="Alt text"
+						value=""
+						onValueChange={() => {}}
+					/>
+				</AppLabelledControl>
+			</main>,
+		);
+		await expectNoA11yViolations(container);
+	});
+
+	it("a static table has a header row over its records", async () => {
+		const { container } = renderWithProviders(
+			<AppStaticTable
+				columns={[
+					{ id: "field", header: "Field", cell: (r: string[]) => r[0] },
+					{
+						id: "to",
+						header: "To",
+						cell: (r: string[]) => r[1],
+						numeric: true,
+					},
+				]}
+				rows={[["Capacity", "12"]]}
+				rowKey={(r) => r[0] ?? ""}
+			/>,
 		);
 		await expectNoA11yViolations(container);
 	});
@@ -180,14 +235,13 @@ describe("accessibility", () => {
 	it("a date picker is labelled closed and a real grid open", async () => {
 		const { container } = renderWithProviders(
 			<main>
-				<Field>
-					<FieldLabel htmlFor="when">Valid from</FieldLabel>
+				<AppLabelledControl label="Valid from" htmlFor="when">
 					<AppDatePicker
 						id="when"
 						value="2026-08-01"
 						onValueChange={() => {}}
 					/>
-				</Field>
+				</AppLabelledControl>
 			</main>,
 		);
 		await expectNoA11yViolations(container);
@@ -201,13 +255,12 @@ describe("accessibility", () => {
 	it("a select is labelled closed and lists real options open", async () => {
 		const { container } = renderWithProviders(
 			<main>
-				<Field>
-					<FieldLabel htmlFor="currency">Currency</FieldLabel>
+				<AppLabelledControl label="Currency" htmlFor="currency">
 					<AppSelect id="currency" value="eur" onValueChange={() => {}}>
 						<SelectItem value="eur">Euro</SelectItem>
 						<SelectItem value="usd">US Dollar</SelectItem>
 					</AppSelect>
-				</Field>
+				</AppLabelledControl>
 			</main>,
 		);
 		await expectNoA11yViolations(container);
