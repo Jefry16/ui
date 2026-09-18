@@ -44,6 +44,28 @@ An alert is a surface, not coloured text: the ground is the state colour
 at 8%, the edge at 25%, the icon and title in the state colour, and the
 body in `--foreground`, which is the text that has to be read.
 
+A status badge is the same surface at badge size: the state colour at 8%
+under text in the state colour, with no edge. `AppBadge` owns the four
+state variants, `destructive` included, because the vendored badge's dark
+tint at 20% drops the text under AA; at 8% every state colour reads at
+4.5:1 or better on a card in both themes, and light `--warning`, the
+tightest, sits at 4.6:1. A status is a badge in its state colour, never
+the primary blue: `default` is for a role or a kind, so a badge in the
+brand colour is never mistaken for "live".
+
+## Surfaces
+
+Three neutral surfaces stack the same way in both themes: the sidebar,
+the page ground, then a card or popover on top. Light is `0.93`, `0.97`,
+`1.0`; dark is `0.145`, `0.175`, `0.205`. Dark keeps elevation by
+lightness, so a card is lighter than its ground, but the sidebar is the
+darkest surface in both themes rather than sharing the card's lightness,
+so the page ground reads as the middle everywhere and a dark card never
+matches the rail beside it. The sidebar's hover is one step up, the page
+ground's lightness in light and the card's in dark; `--muted`,
+`--secondary` and `--accent` sit one step above the card in dark, `0.269`,
+which is a badge's or a hover's fill on a card.
+
 ## Shape
 
 One radius, `--radius: 0.375rem`, drives every derived radius. No pill

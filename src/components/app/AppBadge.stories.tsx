@@ -12,15 +12,21 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = { args: { variant: "default" } };
 export const Secondary: Story = { args: { variant: "secondary" } };
-export const Destructive: Story = { args: { variant: "destructive" } };
 export const Outline: Story = { args: { variant: "outline" } };
+export const Success: Story = { args: { variant: "success" } };
+export const Warning: Story = { args: { variant: "warning" } };
+export const Info: Story = { args: { variant: "info" } };
+export const Destructive: Story = { args: { variant: "destructive" } };
 
 export const Statuses: Story = {
 	render: () => (
 		<div className="flex gap-2">
-			<AppBadge variant="default">Pending</AppBadge>
-			<AppBadge variant="secondary">Accepted</AppBadge>
-			<AppBadge variant="outline">Revoked</AppBadge>
+			<AppBadge variant="success">Published</AppBadge>
+			<AppBadge variant="secondary">Draft</AppBadge>
+			<AppBadge variant="info">Featured</AppBadge>
+			<AppBadge variant="warning">Sold out</AppBadge>
+			<AppBadge variant="destructive">Cancelled</AppBadge>
+			<AppBadge variant="outline">Expired</AppBadge>
 		</div>
 	),
 };
