@@ -3,7 +3,11 @@ import { useForm } from "@tanstack/react-form";
 import { SelectItem } from "../ui/select";
 import { AppSelectField } from "./AppSelectField";
 
-function SelectDemo(props: { label: string; placeholder?: string }) {
+function SelectDemo(props: {
+	label: string;
+	placeholder?: string;
+	required?: boolean;
+}) {
 	const form = useForm({ defaultValues: { demo: "" } });
 	return (
 		<div className="w-80">
@@ -30,4 +34,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
 	args: { label: "Currency", placeholder: "Select a currency" },
+};
+
+export const Required: Story = {
+	args: { label: "Currency", placeholder: "Select a currency", required: true },
 };
