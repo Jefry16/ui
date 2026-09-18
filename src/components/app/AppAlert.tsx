@@ -16,10 +16,9 @@ const ICONS: Record<AppAlertVariant, LucideIcon> = {
 };
 
 const COLORS: Record<AppAlertVariant, string> = {
-	destructive:
-		"text-destructive *:data-[slot=alert-description]:text-destructive/90",
-	warning: "text-warning *:data-[slot=alert-description]:text-warning/90",
-	info: "text-info *:data-[slot=alert-description]:text-info/90",
+	destructive: "border-destructive/25 bg-destructive/8 text-destructive",
+	warning: "border-warning/25 bg-warning/8 text-warning",
+	info: "border-info/25 bg-info/8 text-info",
 };
 
 interface AppAlertProps {
@@ -37,7 +36,13 @@ export const AppAlert = ({
 }: AppAlertProps) => {
 	const Icon = ICONS[variant];
 	return (
-		<Alert className={cn(COLORS[variant], className)}>
+		<Alert
+			className={cn(
+				"*:data-[slot=alert-description]:text-foreground",
+				COLORS[variant],
+				className,
+			)}
+		>
 			<Icon />
 			{title && <AlertTitle>{title}</AlertTitle>}
 			<AlertDescription>{description}</AlertDescription>
