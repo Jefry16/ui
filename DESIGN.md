@@ -27,6 +27,14 @@ hue 264) so the grey belongs to the brand. Chart tokens stay achromatic.
 
 `--destructive`, `--success`, `--warning` and `--info` are state colours and
 are not brand. `--info` stays the alert colour; it no longer colours links.
+It sits on the brand hue, a step darker than the primary in light and a
+step lighter in dark, so a notice and a button are never two blues and
+never the same one. Every state colour carries a title at AA on the
+alert's ground: light `--warning` is amber-700, not amber-600, for that.
+
+An alert is a surface, not coloured text: the ground is the state colour
+at 8%, the edge at 25%, the icon and title in the state colour, and the
+body in `--foreground`, which is the text that has to be read.
 
 ## Shape and type
 
