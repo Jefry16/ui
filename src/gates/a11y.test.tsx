@@ -3,6 +3,7 @@ import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Languages, Pencil, Trash2 } from "lucide-react";
 import { describe, it, vi } from "vitest";
+import { AppCard } from "../components/app/AppCard";
 import { AppComboboxField } from "../components/app/AppComboboxField";
 import { AppDataTable } from "../components/app/AppDataTable";
 import { AppDataTableHeader } from "../components/app/AppDataTableHeader";
@@ -16,7 +17,7 @@ import {
 import { AppSelect } from "../components/app/AppSelect";
 import { AppSourceBlock } from "../components/app/AppSourceBlock";
 import { timestampColumn } from "../components/app/table-columns";
-import { Card, CardContent } from "../components/ui/card";
+import { Button } from "../components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "../components/ui/dialog";
 import { Field, FieldLabel } from "../components/ui/field";
 import { SelectItem } from "../components/ui/select";
@@ -73,11 +74,27 @@ describe("accessibility", () => {
 			},
 		];
 		const { container } = renderWithProviders(
-			<Card>
-				<CardContent>
-					<AppPageActions actions={actions} canWrite />
-				</CardContent>
-			</Card>,
+			<AppCard>
+				<AppPageActions actions={actions} canWrite />
+			</AppCard>,
+		);
+		await expectNoA11yViolations(container);
+	});
+
+	it("a titled card with a header action is operable", async () => {
+		const { container } = renderWithProviders(
+			<AppCard
+				title="Fields"
+				action={
+					<Button variant="outline" size="sm">
+						Add field
+					</Button>
+				}
+			>
+				<dl>
+					<AppDetailField label="Type">product</AppDetailField>
+				</dl>
+			</AppCard>,
 		);
 		await expectNoA11yViolations(container);
 	});
