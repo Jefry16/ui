@@ -44,11 +44,36 @@ An alert is a surface, not coloured text: the ground is the state colour
 at 8%, the edge at 25%, the icon and title in the state colour, and the
 body in `--foreground`, which is the text that has to be read.
 
-## Shape and type
+## Shape
 
 One radius, `--radius: 0.375rem`, drives every derived radius. No pill
-buttons, no larger card radius. The face is Geist Variable for everything;
-no display face, no second family.
+buttons, no larger card radius.
+
+## Type
+
+The face is Geist Variable for everything; no display face, no second
+family. Four sizes and three weights, each tied to a role, so a screen is
+read by role and never by a size picked for one spot. No tracking on
+anything but the eyebrow; a title carries its hierarchy in size and weight
+alone.
+
+| role | classes | where |
+| --- | --- | --- |
+| page title | `text-xl font-semibold` | `AppPageHeader`, the auth shell, the operator route's name |
+| section title | `text-base font-medium` | card, dialog, sheet and legend titles, all from the vendored primitives |
+| empty-state title | `text-lg font-semibold` | `AppEmptyState`, the only title between page and section, because it stands alone in a well |
+| body | `text-sm` | everything else: table cells, descriptions, buttons, labels, breadcrumbs |
+| control text | `text-base md:text-sm` | inputs and textareas, `text-base` below `md` so iOS does not zoom the field |
+| caption | `text-sm text-muted-foreground` | a page subtitle, a field description, an empty-state body |
+| eyebrow | `text-xs font-medium uppercase tracking-wider` | `AppDetailField`'s label; the only other uppercase is a locale code in a badge |
+| value | `text-base font-medium` | `AppDetailField`'s value, one step above body so a detail page reads as label over value |
+| code | `font-mono text-xs` | `AppSourceBlock`, `AppLabelledControl`'s identifier, a locale badge |
+
+Weight comes from the role, never from the caller: a table header is
+`font-semibold` from `AppDataTable`'s cell, so a column's own header element
+adds no weight of its own; a label is `font-medium` from `Label`; a button
+is `font-medium` from `Button`. Dark mode is the same scale on the same
+faces; nothing changes size or weight between themes.
 
 ## Icons
 

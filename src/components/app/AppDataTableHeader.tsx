@@ -49,7 +49,7 @@ export function AppDataTableHeader<TData>(props: Props<TData>) {
 					<SortIcon className="ml-1 size-3.5 opacity-60" />
 				</Button>
 			) : (
-				<span className="font-semibold">{label}</span>
+				<span>{label}</span>
 			)}
 
 			{allowFiltering && (
