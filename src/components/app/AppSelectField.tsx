@@ -8,6 +8,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "../ui/select";
+import { RequiredMark } from "./RequiredMark";
 
 interface AppSelectFieldProps {
 	field: AnyFieldApi;
@@ -15,6 +16,7 @@ interface AppSelectFieldProps {
 	children: ReactNode;
 	placeholder?: string;
 	description?: string;
+	required?: boolean;
 	hideLabel?: boolean;
 	onValueChange?: (value: string) => void;
 }
@@ -25,6 +27,7 @@ export const AppSelectField = ({
 	children,
 	placeholder,
 	description,
+	required,
 	hideLabel,
 	onValueChange,
 }: AppSelectFieldProps) => {
@@ -37,6 +40,7 @@ export const AppSelectField = ({
 				className={hideLabel ? "sr-only" : undefined}
 			>
 				{label}
+				{required && <RequiredMark />}
 			</FieldLabel>
 			<Select
 				value={field.state.value || undefined}
@@ -48,6 +52,7 @@ export const AppSelectField = ({
 				<SelectTrigger
 					id={field.name}
 					aria-invalid={isInvalid}
+					aria-required={required || undefined}
 					onBlur={field.handleBlur}
 					className="w-full"
 				>
