@@ -29,3 +29,18 @@ export const WithActions: Story = {
 		),
 	},
 };
+
+export const LongTitle: Story = {
+	args: {
+		title:
+			"PI_Insurance_confirmation_Professional Indemnity for Digital Professions_205964 (2).pdf",
+		actions: (
+			<>
+				<Button>Edit alt text</Button>
+				<Button variant="outline" size="icon" aria-label="More actions">
+					…
+				</Button>
+			</>
+		),
+	},
+};

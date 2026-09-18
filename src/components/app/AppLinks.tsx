@@ -82,7 +82,9 @@ export function createAppLinks(RouterLink: AnyLink) {
 						<Fragment key={key}>
 							<BreadcrumbItem>
 								{isLast ? (
-									<BreadcrumbPage>{item.label}</BreadcrumbPage>
+									<BreadcrumbPage className="max-w-xs truncate">
+										{item.label}
+									</BreadcrumbPage>
 								) : item.to ? (
 									<BreadcrumbLink asChild>
 										<AppLink to={item.to} params={item.params}>
