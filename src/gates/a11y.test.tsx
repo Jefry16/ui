@@ -13,11 +13,13 @@ import {
 	type AppAction,
 	AppPageActions,
 } from "../components/app/AppPageActions";
+import { AppSelect } from "../components/app/AppSelect";
 import { AppSourceBlock } from "../components/app/AppSourceBlock";
 import { timestampColumn } from "../components/app/table-columns";
 import { Card, CardContent } from "../components/ui/card";
 import { Dialog, DialogContent, DialogTitle } from "../components/ui/dialog";
 import { Field, FieldLabel } from "../components/ui/field";
+import { SelectItem } from "../components/ui/select";
 import { expectNoA11yViolations } from "../test/a11y";
 import { clientFrom, pagedClient } from "../test/data";
 import { renderWithProviders } from "../test/test-utils";
@@ -178,5 +180,25 @@ describe("accessibility", () => {
 			.click(screen.getByRole("button", { name: "Valid from" }));
 		await screen.findByRole("grid");
 		await expectNoA11yViolations(container.ownerDocument.body);
+	});
+	it("a select is labelled closed and lists real options open", async () => {
+		const { container } = renderWithProviders(
+			<main>
+				<Field>
+					<FieldLabel htmlFor="currency">Currency</FieldLabel>
+					<AppSelect id="currency" value="eur" onValueChange={() => {}}>
+						<SelectItem value="eur">Euro</SelectItem>
+						<SelectItem value="usd">US Dollar</SelectItem>
+					</AppSelect>
+				</Field>
+			</main>,
+		);
+		await expectNoA11yViolations(container);
+
+		await userEvent
+			.setup()
+			.click(screen.getByRole("combobox", { name: "Currency" }));
+		await screen.findByRole("option", { name: "US Dollar" });
+		await expectNoA11yViolations(screen.getByRole("listbox"));
 	});
 });

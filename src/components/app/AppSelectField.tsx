@@ -1,13 +1,7 @@
 import type { AnyFieldApi } from "@tanstack/react-form";
 import type { ReactNode } from "react";
 import { Field, FieldDescription, FieldError, FieldLabel } from "../ui/field";
-import {
-	Select,
-	SelectContent,
-	SelectGroup,
-	SelectTrigger,
-	SelectValue,
-} from "../ui/select";
+import { AppSelect } from "./AppSelect";
 import { RequiredMark } from "./RequiredMark";
 
 interface AppSelectFieldProps {
@@ -42,28 +36,20 @@ export const AppSelectField = ({
 				{label}
 				{required && <RequiredMark />}
 			</FieldLabel>
-			<Select
-				value={field.state.value || undefined}
+			<AppSelect
+				id={field.name}
+				value={field.state.value ?? ""}
 				onValueChange={(v) => {
 					field.handleChange(v);
 					onValueChange?.(v);
 				}}
+				onBlur={field.handleBlur}
+				aria-invalid={isInvalid}
+				aria-required={required || undefined}
+				placeholder={placeholder}
 			>
-				<SelectTrigger
-					id={field.name}
-					aria-invalid={isInvalid}
-					aria-required={required || undefined}
-					onBlur={field.handleBlur}
-					className="w-full"
-				>
-					<SelectValue placeholder={placeholder} />
-				</SelectTrigger>
-				<SelectContent>
-					{/* SelectGroup carries the item padding (p-1) — without it the
-					    items sit flush against the popover edges (shadcn docs pattern). */}
-					<SelectGroup>{children}</SelectGroup>
-				</SelectContent>
-			</Select>
+				{children}
+			</AppSelect>
 			{description && <FieldDescription>{description}</FieldDescription>}
 			{isInvalid && <FieldError errors={field.state.meta.errors} />}
 		</Field>
