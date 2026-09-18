@@ -37,6 +37,7 @@ export * from "./components/app/AppQueryState";
 export * from "./components/app/AppResourceView";
 export * from "./components/app/AppRoutePending";
 export * from "./components/app/AppSegmentedControl";
+export * from "./components/app/AppSelect";
 export * from "./components/app/AppSelectField";
 export * from "./components/app/AppSetFilter";
 export * from "./components/app/AppSettingsCard";
