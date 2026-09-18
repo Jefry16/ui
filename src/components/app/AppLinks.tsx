@@ -39,7 +39,7 @@ export function createAppLinks(RouterLink: AnyLink) {
 
 	const AppBackLink = ({ children, ...rest }: LinkLikeProps) => (
 		<AppLink
-			className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
+			className="inline-flex items-center gap-1 text-sm text-primary underline-offset-2 hover:text-primary/80 hover:underline"
 			{...rest}
 		>
 			<ArrowLeft className="size-4" />

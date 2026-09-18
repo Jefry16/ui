@@ -4,7 +4,26 @@ import { anchorLink } from "../../test/links";
 import { renderWithProviders } from "../../test/test-utils";
 import { createAppLinks } from "./AppLinks";
 
-const { AppNewLink, AppBreadcrumb } = createAppLinks(anchorLink);
+const { AppBackLink, AppNewLink, AppResourceLink, AppBreadcrumb } =
+	createAppLinks(anchorLink);
+
+describe("AppBackLink", () => {
+	it("is a resource link with an arrow, not muted text", () => {
+		renderWithProviders(
+			<>
+				<AppBackLink to="/experiences">Back to experiences</AppBackLink>
+				<AppResourceLink to="/experiences/1">Sunset kayak</AppResourceLink>
+			</>,
+		);
+		const back = screen.getByRole("link", { name: /back to experiences/i });
+		const resource = screen.getByRole("link", { name: "Sunset kayak" });
+		for (const colour of ["text-primary", "hover:text-primary/80"]) {
+			expect(back).toHaveClass(colour);
+			expect(resource).toHaveClass(colour);
+		}
+		expect(back).not.toHaveClass("text-muted-foreground");
+	});
+});
 
 describe("AppBreadcrumb", () => {
 	it("truncates the current page's crumb, since the title below carries the full name", () => {
