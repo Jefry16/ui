@@ -1,6 +1,8 @@
-import { screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
+import { UiLabelsProvider } from "../../providers/labels";
+import { testLabels } from "../../test/labels";
 import { renderWithProviders } from "../../test/test-utils";
 import { AppDatePicker } from "./AppDatePicker";
 
@@ -47,5 +49,20 @@ describe("AppDatePicker", () => {
 
 	it("reads the placeholder when there is none", () => {
 		expect(mount("").trigger).toHaveTextContent("Pick a date");
+	});
+
+	it("formats the date in the provider's locale, not the runtime default", () => {
+		render(
+			<UiLabelsProvider labels={{ ...testLabels, locale: "es" }}>
+				<label htmlFor="when">When</label>
+				<AppDatePicker id="when" value="2026-08-01" onValueChange={vi.fn()} />
+			</UiLabelsProvider>,
+		);
+		const expected = new Intl.DateTimeFormat("es", {
+			dateStyle: "medium",
+		}).format(new Date(2026, 7, 1));
+		expect(screen.getByRole("button", { name: /When/ })).toHaveTextContent(
+			expected,
+		);
 	});
 });

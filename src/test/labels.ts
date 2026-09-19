@@ -1,6 +1,7 @@
 import type { UiLabels } from "../providers/labels";
 
 export const testLabels: UiLabels = {
+	locale: "en",
 	cancel: "Cancel",
 	saveChanges: "Save changes",
 	clear: "Clear",

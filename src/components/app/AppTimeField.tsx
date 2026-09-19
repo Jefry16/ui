@@ -29,11 +29,11 @@ const GRID_MINUTES = Array.from({ length: 12 }, (_, i) =>
 	String(i * 5).padStart(2, "0"),
 );
 
-const displayTime = (time: string): string | null => {
+const displayTime = (time: string, locale: string): string | null => {
 	if (!time) return null;
 	const [h, mn] = time.split(":").map(Number);
 	if (Number.isNaN(h) || Number.isNaN(mn)) return null;
-	return new Intl.DateTimeFormat(undefined, {
+	return new Intl.DateTimeFormat(locale, {
 		hour: "numeric",
 		minute: "2-digit",
 	}).format(new Date(2024, 0, 1, h ?? 0, mn ?? 0));
@@ -53,7 +53,7 @@ export const AppTimeField = ({
 
 	const value = field.state.value as string;
 	const [hour = "", minute = ""] = (value || ":").split(":");
-	const display = displayTime(value);
+	const display = displayTime(value, labels.locale);
 	const minutes = GRID_MINUTES.includes(minute)
 		? GRID_MINUTES
 		: minute

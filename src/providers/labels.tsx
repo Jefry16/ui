@@ -9,6 +9,7 @@ export type TextOperator =
 	| "ends_with";
 
 export interface UiLabels {
+	locale: string;
 	cancel: string;
 	saveChanges: string;
 	clear: string;
