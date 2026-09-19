@@ -32,7 +32,7 @@ export const AppLocaleTabs = ({
 					className={cn(
 						"inline-flex items-center gap-1.5 rounded px-3 py-1.5 text-sm font-medium transition-colors",
 						active === code
-							? "bg-background shadow-sm"
+							? "bg-muted shadow-sm"
 							: "text-muted-foreground hover:text-foreground",
 					)}
 				>
