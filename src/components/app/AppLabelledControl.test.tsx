@@ -27,6 +27,17 @@ describe("AppLabelledControl", () => {
 		);
 	});
 
+	it("hides its label visually while keeping it accessible by name", () => {
+		renderWithProviders(
+			<AppLabelledControl label="Search" htmlFor="s" hideLabel>
+				<input id="s" />
+			</AppLabelledControl>,
+		);
+
+		expect(screen.getByLabelText("Search")).toHaveAttribute("id", "s");
+		expect(screen.getByText("Search")).toHaveClass("sr-only");
+	});
+
 	it("shows its errors only while invalid", () => {
 		const errors = [{ message: "Too low" }];
 		const { rerender } = renderWithProviders(

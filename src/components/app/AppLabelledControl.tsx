@@ -21,6 +21,7 @@ export interface AppLabelledControlProps {
 	invalid?: boolean;
 	errors?: Array<{ message?: string } | undefined>;
 	layout?: AppLabelledControlLayout;
+	hideLabel?: boolean;
 	children: ReactNode;
 }
 
@@ -54,6 +55,7 @@ export const AppLabelledControl = ({
 	invalid,
 	errors,
 	layout = "stack",
+	hideLabel,
 	children,
 }: AppLabelledControlProps) => {
 	const caption = (
@@ -68,7 +70,10 @@ export const AppLabelledControl = ({
 	if (!htmlFor) {
 		return (
 			<FieldSet className="gap-3" data-invalid={invalid || undefined}>
-				<FieldLegend variant="label" className="flex gap-2">
+				<FieldLegend
+					variant="label"
+					className={hideLabel ? "sr-only" : "flex gap-2"}
+				>
 					{caption}
 				</FieldLegend>
 				{children}
@@ -81,7 +86,12 @@ export const AppLabelledControl = ({
 			orientation={layout === "row" ? "horizontal" : "vertical"}
 			data-invalid={invalid || undefined}
 		>
-			<FieldLabel htmlFor={htmlFor}>{caption}</FieldLabel>
+			<FieldLabel
+				htmlFor={htmlFor}
+				className={hideLabel ? "sr-only" : undefined}
+			>
+				{caption}
+			</FieldLabel>
 			{children}
 			{footer}
 		</Field>
