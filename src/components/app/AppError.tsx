@@ -23,7 +23,7 @@ export function AppError({
 			action={
 				onRetry ? (
 					<Button variant="outline" onClick={onRetry}>
-						<RotateCw className="size-4" />
+						<RotateCw />
 						{labels.retry}
 					</Button>
 				) : undefined

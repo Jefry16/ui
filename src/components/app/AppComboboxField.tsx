@@ -207,7 +207,7 @@ export const AppComboboxField = ({
 						<span className={cn("truncate", !shown && "text-muted-foreground")}>
 							{shown ?? placeholder ?? labels.notSet}
 						</span>
-						<ChevronsUpDown className="opacity-50" />
+						<ChevronsUpDown className="text-muted-foreground" />
 					</Button>
 				</PopoverTrigger>
 				<PopoverContent

@@ -1,4 +1,4 @@
-import { CalendarIcon } from "lucide-react";
+import { CalendarDays } from "lucide-react";
 import { type ComponentProps, useState } from "react";
 import { cn } from "../../lib/utils";
 import { useUiLabels } from "../../providers/labels";
@@ -64,7 +64,7 @@ export const AppDatePicker = ({
 					aria-invalid={ariaInvalid}
 					aria-required={ariaRequired}
 				>
-					<CalendarIcon />
+					<CalendarDays />
 					{display ?? placeholder ?? labels.pickADate}
 				</Button>
 			</PopoverTrigger>

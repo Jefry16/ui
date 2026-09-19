@@ -165,7 +165,7 @@ export function AppDataTable<TData extends { id: string }>({
 										<AppEmptyState {...emptyState} />
 									) : (
 										<div className="flex flex-col items-center justify-center gap-2 text-muted-foreground">
-											<Inbox className="size-8 opacity-40" />
+											<Inbox className="size-8" />
 											<span className="text-sm">{labels.noResults}</span>
 										</div>
 									)}

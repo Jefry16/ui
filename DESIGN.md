@@ -99,4 +99,19 @@ faces; nothing changes size or weight between themes.
 
 ## Icons
 
-Lucide, at 2 px stroke, until the Nucleo Core set replaces it.
+Lucide, at its 2 px default stroke; nothing sets `strokeWidth`. An icon
+never changes the size of its own accord. Inline, it takes the size of what
+holds it: a button and a sidebar item size their svg to 16 px, and an icon
+that stands beside text with no such container is `size-4`. In a well — an
+empty state, a not-found or not-permitted card, an error card, a dropzone,
+a picker with nothing picked — it is `size-8 text-muted-foreground`, one
+size and one colour for every "nothing here" the app shows. Muting is
+`text-muted-foreground`, never `opacity-*`; opacity is for the disabled
+state. Each metaphor has one glyph: people are the round family
+(`UsersRound`, `UserRound`), a date is `CalendarDays`, the dashboard is
+`LayoutDashboard`, add is `Plus`, and the four states use the icons the
+toast uses — `CircleCheck`, `Info`, `TriangleAlert`, `OctagonX` — so an
+alert and a toast for the same outcome show the same sign. Imports use the
+bare name, never the `Icon`-suffixed alias, outside the vendored files.
+`src/gates/icons.test.ts` reads every non-vendored file for a size class,
+an opacity class or an aliased import an icon element is not allowed.
