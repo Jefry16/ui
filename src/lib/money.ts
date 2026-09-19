@@ -1,6 +1,10 @@
-export const formatMoney = (amount: number, currency: string | null): string =>
+export const formatMoney = (
+	amount: number,
+	currency: string | null,
+	locale: string,
+): string =>
 	new Intl.NumberFormat(
-		undefined,
+		locale,
 		currency
 			? { style: "currency", currency }
 			: { minimumFractionDigits: 2, maximumFractionDigits: 2 },
