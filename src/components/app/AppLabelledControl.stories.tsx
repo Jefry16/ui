@@ -39,6 +39,20 @@ function Row() {
 	);
 }
 
+function HiddenLabel() {
+	const [value, setValue] = useState("");
+	return (
+		<AppLabelledControl label="Search" htmlFor="hidden" hideLabel>
+			<AppTextInput
+				id="hidden"
+				placeholder="Search"
+				value={value}
+				onValueChange={setValue}
+			/>
+		</AppLabelledControl>
+	);
+}
+
 function Group() {
 	const [first, setFirst] = useState("");
 	const [second, setSecond] = useState("");
@@ -79,3 +93,8 @@ export const Stacked: Story = {};
 export const InARow: Story = { render: () => <Row /> };
 
 export const AroundAGroup: Story = { render: () => <Group /> };
+
+export const HiddenLabelStory: Story = {
+	name: "With a hidden label",
+	render: () => <HiddenLabel />,
+};
