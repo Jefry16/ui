@@ -100,7 +100,7 @@ export const AppImageDropzone = ({
 				)}
 			>
 				{pending ? (
-					<Spinner className="size-6 text-muted-foreground" />
+					<Spinner className="size-8 text-muted-foreground" />
 				) : previewUrl ? (
 					<>
 						<img
@@ -109,12 +109,12 @@ export const AppImageDropzone = ({
 							className="absolute inset-0 size-full object-cover"
 						/>
 						<span className="absolute inset-0 flex items-center justify-center bg-background/70 opacity-0 transition-opacity group-hover:opacity-100 motion-reduce:transition-none">
-							<ImageUp className="size-5" />
+							<ImageUp className="size-8" />
 						</span>
 					</>
 				) : (
 					<span className="flex flex-col items-center gap-2 px-4">
-						<ImageUp className="size-6 text-muted-foreground" />
+						<ImageUp className="size-8 text-muted-foreground" />
 						{hint && (
 							<span className="text-sm text-muted-foreground">{hint}</span>
 						)}

@@ -26,7 +26,7 @@ export function AppNotFound({
 			action={
 				action ?? (
 					<Button variant="outline" onClick={back}>
-						<ArrowLeft className="size-4" />
+						<ArrowLeft />
 						{labels.goBack}
 					</Button>
 				)

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Calendar, Home, Inbox } from "lucide-react";
+import { CalendarDays, Inbox, LayoutDashboard } from "lucide-react";
 import {
 	Sidebar,
 	SidebarContent,
@@ -40,13 +40,13 @@ export const Default: Story = {
 							<SidebarMenu>
 								<SidebarMenuItem>
 									<SidebarMenuButton isActive>
-										<Home />
+										<LayoutDashboard />
 										Dashboard
 									</SidebarMenuButton>
 								</SidebarMenuItem>
 								<SidebarMenuItem>
 									<SidebarMenuButton>
-										<Calendar />
+										<CalendarDays />
 										Availability
 									</SidebarMenuButton>
 								</SidebarMenuItem>

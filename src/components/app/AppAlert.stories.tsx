@@ -25,6 +25,14 @@ export const Warning: Story = {
 	},
 };
 
+export const Success: Story = {
+	args: {
+		variant: "success",
+		title: "Email verified",
+		description: "Your account is ready. Sign in to continue.",
+	},
+};
+
 export const Info: Story = {
 	args: {
 		variant: "info",

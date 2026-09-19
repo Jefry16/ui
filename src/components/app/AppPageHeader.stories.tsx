@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { PlusIcon } from "lucide-react";
+import { Plus } from "lucide-react";
 import { Button } from "../ui/button";
 import { AppPageHeader } from "./AppPageHeader";
 
@@ -23,7 +23,7 @@ export const WithActions: Story = {
 		description: "The tours and activities you sell.",
 		actions: (
 			<Button>
-				<PlusIcon className="size-4" />
+				<Plus />
 				New experience
 			</Button>
 		),

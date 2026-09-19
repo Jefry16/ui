@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Users } from "lucide-react";
+import { UsersRound } from "lucide-react";
 import { Button } from "../ui/button";
 import { AppEmptyState } from "./AppEmptyState";
 
@@ -7,7 +7,7 @@ const meta = {
 	title: "Components/AppEmptyState",
 	component: AppEmptyState,
 	args: {
-		icon: Users,
+		icon: UsersRound,
 		title: "No team members yet",
 		description: "Invite people to help run this tour operator.",
 	},

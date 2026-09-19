@@ -46,7 +46,7 @@ export function AppDataTableHeader<TData>(props: Props<TData>) {
 					onClick={() => column.toggleSorting()}
 				>
 					{label}
-					<SortIcon className="ml-1 size-3.5 opacity-60" />
+					<SortIcon className="ml-1 text-muted-foreground" />
 				</Button>
 			) : (
 				<span>{label}</span>
@@ -61,7 +61,7 @@ export function AppDataTableHeader<TData>(props: Props<TData>) {
 							className="relative size-7 cursor-pointer"
 							aria-label={labels.filterColumn(label)}
 						>
-							<Filter className="size-3.5" />
+							<Filter />
 							{hasActiveFilter && (
 								<span className="absolute top-1 right-1 size-1.5 rounded-full bg-primary" />
 							)}
