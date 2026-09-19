@@ -41,7 +41,9 @@ export const AppDatePicker = ({
 
 	const date = parseIso(value);
 	const display = date
-		? new Intl.DateTimeFormat(undefined, { dateStyle: "medium" }).format(date)
+		? new Intl.DateTimeFormat(labels.locale, { dateStyle: "medium" }).format(
+				date,
+			)
 		: null;
 
 	return (
