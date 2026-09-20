@@ -39,8 +39,9 @@ the list never pretends.
    Gate: `src/gates/token-drift.test.ts`. The sheet itself keeps what
    `DESIGN.md` states of it, no radius step above the one radius and a
    control edge at 3:1 on its surfaces: `src/gates/tokens.test.ts`.
-   One shape: no `rounded-full` outside a state dot, in anything this
-   repo writes: `src/gates/shape.test.ts`.
+   One shape and flat surfaces: no `rounded-full` outside a state dot and
+   no resting shadow, in anything this repo writes:
+   `src/gates/shape.test.ts`.
 
 5. **Every App component ships a story, and every story mounts.** The built
    Storybook indexes every story file on disk.

@@ -68,6 +68,19 @@ describe("the token sheet keeps the shape and the control edge DESIGN.md states"
 		).toEqual([]);
 	});
 
+	it("a resting surface casts no shadow", () => {
+		const theme = block("@theme inline");
+		const cast = ["2xs", "xs", "sm"].filter(
+			(step) => theme.get(`--shadow-${step}`) !== "0 0 #0000",
+		);
+		expect(
+			cast,
+			"Depth is lightness: sidebar, ground, card. The small shadow steps " +
+				"are what a vendored resting surface asks for, and they resolve to " +
+				"nothing. `shadow-md` and up stay, for what floats over the page.",
+		).toEqual([]);
+	});
+
 	it("a control's edge reads at 3:1 on every surface it sits on", () => {
 		const faint = ["", ".dark"].flatMap((selector) => {
 			const tokens = block(selector === "" ? ":root" : selector);

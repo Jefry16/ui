@@ -23,6 +23,9 @@ const scannable = files
 const CLASS_STRING = /"[^"\n]*\brounded-full\b[^"\n]*"/g;
 const STATE_DOT = /\bsize-1\.5\b/;
 
+const RESTING_SHADOW =
+	/"[^"\n]*(?<![\w-])shadow(?:-2xs|-xs|-sm)?(?![\w-])[^"\n]*"/g;
+
 describe("one shape: the radius, and a dot for a state", () => {
 	it("the walk is wired (a broken walk must not pass vacuously)", () => {
 		expect(scannable.length).toBeGreaterThan(80);
@@ -45,6 +48,23 @@ describe("one shape: the radius, and a dot for a state", () => {
 				"tile). The one circle is a `size-1.5` dot that marks a state. A " +
 				"vendored primitive that is round gets an App wrapper, as " +
 				"AppAvatar and AppBadge are.",
+		).toEqual([]);
+	});
+
+	it("nothing at rest casts a shadow", () => {
+		const offenders = scannable.flatMap((path) =>
+			[
+				...readFileSync(join(ROOT, path.slice(1)), "utf8").matchAll(
+					RESTING_SHADOW,
+				),
+			].map(([classes]) => `${path}: ${classes}`),
+		);
+		expect(
+			offenders,
+			"`shadow`, `shadow-xs` and `shadow-sm` lift a surface that is not " +
+				"floating. A card, a table and a tab sit on the page by lightness " +
+				"and a hairline. `shadow-md` and up is for what floats: a menu, a " +
+				"popover, a sheet.",
 		).toEqual([]);
 	});
 });
