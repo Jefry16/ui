@@ -69,7 +69,20 @@ which is a badge's or a hover's fill on a card.
 ## Shape
 
 One radius, `--radius: 0.375rem`, drives every derived radius. No pill
-buttons, no larger card radius.
+buttons, no larger card radius: the steps from `--radius-lg` up all resolve
+to `--radius`, so a vendored card, dialog or badge that asks for
+`rounded-xl` is exactly as round as the input inside it. `--radius-sm` and
+`--radius-md` stay smaller, for what sits inside a control.
+
+## Controls
+
+`--input` is the edge of every input, textarea, select trigger and
+checkbox, and it is its own token rather than `--border`'s twin: a card's
+hairline only separates, a control's edge says where to type. It reads at
+3:1 against the card and against the page ground in both themes, `0.64` in
+light and white at 35% in dark. Focus is the brand: `--ring`. A disabled
+control fills with half of `--input`, so it reads as closed rather than
+faint.
 
 ## Type
 
