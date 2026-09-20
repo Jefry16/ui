@@ -66,6 +66,13 @@ ground's lightness in light and the card's in dark; `--muted`,
 `--secondary` and `--accent` sit one step above the card in dark, `0.269`,
 which is a badge's or a hover's fill on a card.
 
+Nothing at rest casts a shadow. `--shadow-2xs`, `--shadow-xs` and
+`--shadow-sm` resolve to nothing, so a vendored card or inset panel that
+asks for one gets none, and nothing this repo writes asks. A shadow means
+floating: `shadow-md` and up, on a menu, a popover, a sheet. The one other
+shadow is a state, the table header's edge once the rows have scrolled
+under it.
+
 ## Shape
 
 One radius, `--radius: 0.375rem`, drives every derived radius. No pill

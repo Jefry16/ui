@@ -97,6 +97,9 @@
   --radius-3xl: var(--radius);
   --radius-4xl: var(--radius);
   --color-preview-surface: var(--preview-surface);
+  --shadow-2xs: 0 0 #0000;
+  --shadow-xs: 0 0 #0000;
+  --shadow-sm: 0 0 #0000;
   /* The sticky table header's scrolled-state edge shadow. */
   --shadow-scroll-edge: 0 4px 6px -2px rgb(0 0 0 / 0.1);
 }

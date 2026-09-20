@@ -84,7 +84,7 @@ export function AppDataTable<TData extends { id: string }>({
 	const showEmptyState = Boolean(emptyState) && !filtersActive;
 
 	return (
-		<div className="overflow-hidden rounded-md border bg-card shadow-sm">
+		<div className="overflow-hidden rounded-lg border bg-card">
 			<div className="relative max-h-150 overflow-auto">
 				<table className="w-full caption-bottom border-separate border-spacing-0 text-sm">
 					<TableHeader>
