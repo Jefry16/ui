@@ -74,9 +74,11 @@ to `--radius`, so a vendored card, dialog or badge that asks for
 `rounded-xl` is exactly as round as the input inside it. `--radius-sm` and
 `--radius-md` stay smaller, for what sits inside a control.
 
-An avatar is a tile, not a circle: `AppAvatar` puts the one radius on the
-vendored frame, its edge and its fallback. A circle is a second shape, and
-the only ones left are dots that mark a state.
+A circle is a second shape. An avatar is a tile: `AppAvatar` puts the one
+radius on the vendored frame, its edge and its fallback. An empty state's
+icon well is a tile too. The one circle is a `size-1.5` dot that marks a
+state, a translated locale or an active filter. What sits on a tile, a
+check or a remove button over an image, takes `rounded-md`.
 
 ## Controls
 

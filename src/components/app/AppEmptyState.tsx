@@ -31,7 +31,7 @@ export function AppEmptyState({
 	return (
 		<div className="flex flex-col items-center gap-3 text-center">
 			{Icon && (
-				<div className="flex size-16 items-center justify-center rounded-full bg-muted text-muted-foreground">
+				<div className="flex size-16 items-center justify-center rounded-lg bg-muted text-muted-foreground">
 					<Icon className="size-8" />
 				</div>
 			)}
