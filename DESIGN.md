@@ -74,6 +74,10 @@ to `--radius`, so a vendored card, dialog or badge that asks for
 `rounded-xl` is exactly as round as the input inside it. `--radius-sm` and
 `--radius-md` stay smaller, for what sits inside a control.
 
+An avatar is a tile, not a circle: `AppAvatar` puts the one radius on the
+vendored frame, its edge and its fallback. A circle is a second shape, and
+the only ones left are dots that mark a state.
+
 ## Controls
 
 `--input` is the edge of every input, textarea, select trigger and

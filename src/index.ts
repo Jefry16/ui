@@ -1,5 +1,6 @@
 export * from "./components/app/AppAlert";
 export * from "./components/app/AppAsyncSetFilter";
+export * from "./components/app/AppAvatar";
 export * from "./components/app/AppBadge";
 export * from "./components/app/AppCard";
 export * from "./components/app/AppCheckboxField";
