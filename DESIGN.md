@@ -37,7 +37,7 @@ quiet breadcrumb.
 | three flat surfaces, no resting shadow | Surfaces, `src/gates/tokens.test.ts`, `src/gates/shape.test.ts` |
 | one radius, a dot for a state | Shape, `src/gates/tokens.test.ts`, `src/gates/shape.test.ts` |
 | the strong edge is the control's | Controls, `src/gates/tokens.test.ts` |
-| hierarchy by structure | Type |
+| hierarchy by structure | Type, Tables, `src/gates/tokens.test.ts` |
 | one icon family, one stroke | Icons, `src/gates/icons.test.ts` |
 
 ## Brand
@@ -123,6 +123,17 @@ icon well is a tile too. The one circle is a `size-1.5` dot that marks a
 state, a translated locale or an active filter. What sits on a tile, a
 check or a remove button over an image, takes `rounded-md`.
 
+## Tables
+
+A table is a ledger. The header is a band of `--muted` carrying eyebrows in
+`--muted-foreground`; the sorted column's label is the one in ink, which is
+the state. Header and cells share one horizontal padding, so a label sits
+over its values. Rows are separated by hairlines and the last row has none:
+the frame closes it.
+
+`--muted-foreground` reads at 4.5:1 on the card, the page ground and the
+muted band in both themes, because it is small text on all three.
+
 ## Controls
 
 `--input` is the edge of every input, textarea, select trigger and
@@ -149,13 +160,13 @@ alone.
 | body | `text-sm` | everything else: table cells, descriptions, buttons, labels, breadcrumbs |
 | control text | `text-base md:text-sm` | inputs and textareas, `text-base` below `md` so iOS does not zoom the field |
 | caption | `text-sm text-muted-foreground` | a page subtitle, a field description, an empty-state body |
-| eyebrow | `text-xs font-medium uppercase tracking-wider` | `AppDetailField`'s label; the only other uppercase is a locale code in a badge |
+| eyebrow | `text-xs font-medium uppercase tracking-wider` | `AppDetailField`'s label and a table's column header, so a list and a detail page name a value the same way; the only other uppercase is a locale code in a badge |
 | value | `text-base font-medium` | `AppDetailField`'s value, one step above body so a detail page reads as label over value |
 | code | `font-mono text-xs` | `AppSourceBlock`, `AppLabelledControl`'s identifier, a locale badge |
 
-Weight comes from the role, never from the caller: a table header is
-`font-semibold` from `AppDataTable`'s cell, so a column's own header element
-adds no weight of its own; a label is `font-medium` from `Label`; a button
+Weight comes from the role, never from the caller: a table header is the
+eyebrow from `table-head.ts`, which `AppDataTable` and `AppStaticTable` both
+read, so a column's own header element adds no weight of its own; a label is `font-medium` from `Label`; a button
 is `font-medium` from `Button`. Dark mode is the same scale on the same
 faces; nothing changes size or weight between themes.
 
