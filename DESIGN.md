@@ -4,6 +4,42 @@ The admin's look is the token sheet, `src/styles.css`. This file names the
 choices the sheet cannot explain by itself. A value is right when it matches
 the sheet; when the two disagree, the sheet wins and this file is wrong.
 
+## The line: Signal on Slate
+
+A quiet, precise workspace in cool grey, where colour appears only when it
+means something. It is a tool an operator uses all day, not a page that
+sells. Every section below is this sentence applied to one material, and a
+choice that no section covers is settled by it.
+
+**Slate.** Every neutral is the same cool blue-grey, stacked as three flat
+surfaces: sidebar, ground, card. Depth is lightness, never a shadow under
+something at rest. A hairline separates; the one strong edge is on the
+thing you type into.
+
+**Signal.** Colour is rationed, and each one has one job. Lime says where
+you are. Blue says what you can do, and what has focus. A state colour says
+what happened. Nothing is coloured to decorate, and a colour never takes a
+second job.
+
+**Instrument.** One radius, no pill and no circle but a dot for a state.
+Hierarchy is structure: a small uppercase label over a bold value,
+monospace for a handle or a key, one typeface, one icon family at one
+stroke.
+
+The test for anything new, a component, a screen or a token: if it is
+decorative, soft, round, or coloured without a meaning, it does not belong.
+What passes the test and is still plain stays plain: a stock chevron, a
+quiet breadcrumb.
+
+| the line | where it is kept |
+| --- | --- |
+| colour has one job each | Brand, State |
+| three flat surfaces, no resting shadow | Surfaces, `src/gates/tokens.test.ts`, `src/gates/shape.test.ts` |
+| one radius, a dot for a state | Shape, `src/gates/tokens.test.ts`, `src/gates/shape.test.ts` |
+| the strong edge is the control's | Controls, `src/gates/tokens.test.ts` |
+| hierarchy by structure | Type |
+| one icon family, one stroke | Icons, `src/gates/icons.test.ts` |
+
 ## Brand
 
 | role | value | oklch |
