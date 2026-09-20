@@ -1,4 +1,4 @@
-import { screen } from "@testing-library/react";
+import { screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 import { clientFrom, pagedClient } from "../../test/data";
@@ -109,5 +109,42 @@ describe("AppDataTable sorting semantics", () => {
 
 		expect(screen.getByRole("button", { name: /name/i })).toBeInTheDocument();
 		expect(screen.queryByRole("button", { name: /thumbnail/i })).toBeNull();
+	});
+});
+
+describe("AppDataTable reads as a ledger", () => {
+	it("sets a header as the eyebrow on the muted band", async () => {
+		renderTable();
+		const thumb = await screen.findByRole("columnheader", {
+			name: /thumbnail/i,
+		});
+		expect(thumb).toHaveClass(
+			"bg-muted",
+			"text-xs",
+			"uppercase",
+			"tracking-wider",
+			"text-muted-foreground",
+		);
+		expect(thumb).not.toHaveClass("font-semibold");
+	});
+
+	it("inks the sorted column's label and leaves the others muted", async () => {
+		renderTable();
+		const sort = await screen.findByRole("button", { name: /name/i });
+		expect(sort).toHaveClass("text-muted-foreground");
+
+		await userEvent.click(sort);
+		expect(sort).toHaveClass("text-foreground");
+		expect(sort).not.toHaveClass("text-muted-foreground");
+	});
+
+	it("draws no line under the last row, the frame closes it", async () => {
+		renderTable();
+		await waitFor(() =>
+			expect(document.querySelectorAll("tbody tr")).toHaveLength(1),
+		);
+		const cells = [...document.querySelectorAll("tbody td")];
+		expect(cells).toHaveLength(2);
+		for (const cell of cells) expect(cell).not.toHaveClass("border-b");
 	});
 });

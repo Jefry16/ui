@@ -17,6 +17,7 @@ import {
 } from "../ui/table";
 import { AppEmptyState } from "./AppEmptyState";
 import { AppError } from "./AppError";
+import { TABLE_CELL, TABLE_HEAD } from "./table-head";
 
 const SKELETON_ROW_KEYS = ["s0", "s1", "s2", "s3", "s4", "s5"];
 
@@ -99,7 +100,8 @@ export function AppDataTable<TData extends { id: string }>({
 												: undefined
 										}
 										className={cn(
-											"sticky top-0 z-10 border-b bg-card px-3 py-3 font-semibold",
+											"sticky top-0 z-10 border-b",
+											TABLE_HEAD,
 											header.column.columnDef.meta?.align === "right" &&
 												"text-right",
 										)}
@@ -129,20 +131,24 @@ export function AppDataTable<TData extends { id: string }>({
 							SKELETON_ROW_KEYS.map((rowKey) => (
 								<TableRow key={rowKey}>
 									{visibleColumns.map((col) => (
-										<TableCell key={col.id} className="border-b">
+										<TableCell
+											key={col.id}
+											className={cn(TABLE_CELL, "border-b")}
+										>
 											<Skeleton className="h-4 w-full max-w-45" />
 										</TableCell>
 									))}
 								</TableRow>
 							))
 						) : rows.length ? (
-							rows.map((row) => (
+							rows.map((row, index) => (
 								<TableRow key={row.id}>
 									{row.getVisibleCells().map((cell) => (
 										<TableCell
 											key={cell.id}
 											className={cn(
-												"border-b",
+												TABLE_CELL,
+												index < rows.length - 1 && "border-b",
 												cell.column.columnDef.meta?.align === "right" &&
 													"text-right tabular-nums",
 											)}

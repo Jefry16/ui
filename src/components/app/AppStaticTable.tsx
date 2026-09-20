@@ -8,6 +8,7 @@ import {
 	TableHeader,
 	TableRow,
 } from "../ui/table";
+import { TABLE_CELL, TABLE_HEAD } from "./table-head";
 
 export type AppStaticTableEmphasis = "strong" | "muted";
 
@@ -41,7 +42,7 @@ export const AppStaticTable = <Row,>({
 				{columns.map((column) => (
 					<TableHead
 						key={column.id}
-						className={cn(column.numeric && "text-right")}
+						className={cn(TABLE_HEAD, column.numeric && "text-right")}
 					>
 						{column.header}
 					</TableHead>
@@ -55,6 +56,7 @@ export const AppStaticTable = <Row,>({
 						<TableCell
 							key={column.id}
 							className={cn(
+								TABLE_CELL,
 								column.numeric && "text-right tabular-nums",
 								column.emphasis && EMPHASIS[column.emphasis],
 							)}

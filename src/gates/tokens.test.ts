@@ -100,4 +100,24 @@ describe("the token sheet keeps the shape and the control edge DESIGN.md states"
 				"against the card and against the page ground, in both themes.",
 		).toEqual([]);
 	});
+
+	it("muted text reads at 4.5:1 on every surface it is written on", () => {
+		const faint = ["", ".dark"].flatMap((selector) => {
+			const tokens = block(selector === "" ? ":root" : selector);
+			const text = oklch(tokens.get("--muted-foreground") as string);
+			return ["--card", "--background", "--muted"]
+				.map((surface) => ({
+					theme: selector || "light",
+					surface,
+					ratio: contrast(text, oklch(tokens.get(surface) as string)),
+				}))
+				.filter(({ ratio }) => ratio < 4.5);
+		});
+		expect(
+			faint,
+			"--muted-foreground is a caption on a card, a subtitle on the page " +
+				"ground and a table header on the muted band. It is small text, so " +
+				"WCAG 1.4.3 asks 4.5:1 on each, in both themes.",
+		).toEqual([]);
+	});
 });

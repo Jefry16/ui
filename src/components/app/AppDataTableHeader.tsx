@@ -1,5 +1,6 @@
 import type { HeaderContext } from "@tanstack/react-table";
 import { ArrowDown, ArrowUp, ArrowUpDown, Filter } from "lucide-react";
+import { cn } from "../../lib/utils";
 import { useUiLabels } from "../../providers/labels";
 import { Button } from "../ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
@@ -42,11 +43,14 @@ export function AppDataTableHeader<TData>(props: Props<TData>) {
 			{canSort ? (
 				<Button
 					variant="link"
-					className="cursor-pointer p-0 font-semibold text-foreground hover:no-underline has-[>svg]:p-0"
+					className={cn(
+						"h-auto cursor-pointer p-0 text-xs font-medium tracking-wider uppercase hover:text-foreground hover:no-underline has-[>svg]:p-0",
+						sorted ? "text-foreground" : "text-muted-foreground",
+					)}
 					onClick={() => column.toggleSorting()}
 				>
 					{label}
-					<SortIcon className="ml-1 text-muted-foreground" />
+					<SortIcon className="ml-1" />
 				</Button>
 			) : (
 				<span>{label}</span>
