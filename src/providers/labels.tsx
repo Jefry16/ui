@@ -37,6 +37,8 @@ export interface UiLabels {
 	resourceNotFound: string;
 	goBack: string;
 	filterColumn: (column: string) => string;
+	audience: string;
+	price: string;
 	resourceCreated: (resource: string) => string;
 	resourceUpdated: (resource: string) => string;
 	resourceDeleted: (resource: string) => string;
