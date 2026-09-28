@@ -38,6 +38,8 @@ export const testLabels: UiLabels = {
 	resourceNotFound: "It may have been removed, or you don't have access to it.",
 	goBack: "Go back",
 	filterColumn: (column) => `Filter by ${column}`,
+	audience: "Audience",
+	price: "Price",
 	resourceCreated: (resource) => `${resource} created`,
 	resourceUpdated: (resource) => `${resource} updated`,
 	resourceDeleted: (resource) => `${resource} deleted`,
